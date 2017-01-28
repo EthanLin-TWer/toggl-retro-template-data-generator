@@ -23,7 +23,6 @@ toggl.summaryReport({
   console.log(getProjectsData(reports.data, since, until))
   console.log('----^^projects data^^----')
 
-  console.log(reports.data[0].items)
 })
 
 function getProjectsData(reports, since, until) {
@@ -31,18 +30,23 @@ function getProjectsData(reports, since, until) {
     let client = report.title.client
     let clientTime = report.time
 
-    return report.items.map(project => {
+    let projects = report.items.map(project => {
       let projectTime = project.time
       let clientPercentage = projectTime / clientTime
-      let clientHours = clientTime / getTotalMillis(until, since) * 24 
+      let clientHours = clientTime / getTotalMillis(until, since) * 24
       return {
-	client, 
-	project: project.title.project,
-	time: projectTime,
+        project: project.title.project,
+	time: projectTime, 
 	percentage: clientPercentage,
-	hoursPerDay: clientPercentage * clientHours
+	hoursPerday: clientPercentage * clientHours
       }
     })
+
+    return {
+      client, 
+      time: clientTime, 
+      projects
+    }
   })
 }
 
