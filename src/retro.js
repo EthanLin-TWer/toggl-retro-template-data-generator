@@ -18,14 +18,11 @@ toggl.summaryReport({
   subgrouping: "projects",
   workspace_id, since, until
 }, (error, reports) => {
-  console.log(report.getSummaryData(reports.total_grand, since, until))
-  console.log('----^^summary data^^----')
+  let summary = report.getSummaryData(reports.total_grand, since, until)
+  let clientData = report.getClientData(reports.data, since, until)
+  let projectsData = report.getProjectsData(reports.data, since, until)
 
-  console.log(report.getClientData(reports.data, since, until))
-  console.log('----^^client data^^----')
-
-  console.log(report.getProjectsData(reports.data, since, until))
-  console.log('----^^projects data^^----')
-
+  let markdown = template.generateMarkdown(summary, clientData, projectsData)
+  console.log(markdown)
 })
 
