@@ -14,7 +14,7 @@ Running `npm run generate` in project root, and you will see reports like this:
 
 ### Summary Data 
 
-```json
+```
 { totalGrand: 1006076304,
   totalDays: 12,
   grandPercentage: 0.9703668055555555,
@@ -23,7 +23,7 @@ Running `npm run generate` in project root, and you will see reports like this:
 
 ### Clients Data 
 
-```json
+```
 [ { client: 'A1-Work',
     time: 142375304,
     percentage: 0.13732185956790124,
@@ -64,7 +64,7 @@ Running `npm run generate` in project root, and you will see reports like this:
 
 ### Projects Data 
 
-```json
+```
 [ [ { client: 'A1-Work',
       project: 'BlackOps',
       time: 90298304,
