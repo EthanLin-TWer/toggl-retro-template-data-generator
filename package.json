@@ -12,8 +12,8 @@
     "nodemon": "^1.11.0"
   },
   "scripts": {
-    "dev": "nodemon --exec babel-node retro.js",
-    "generate": "babel-node retro.js"
+    "dev": "nodemon --exec babel-node ./src/retro.js",
+    "generate": "babel-node ./src/retro.js"
   },
   "author": "",
   "license": "MIT"

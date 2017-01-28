@@ -1,5 +1,5 @@
 import TogglClient from 'toggl-api'
-import Settings from './settings'
+import Settings from '../settings'
 
 const apiToken = Settings.token
 const workspace_id = Settings.workspaceId
@@ -8,25 +8,13 @@ const until = Settings.until
 
 let toggl = new TogglClient({ apiToken })
 
-toggl.getClients((error, clients) => {
-  console.log('----clients----')
-  // console.log(clients)
-
-  clients.forEach(client => {
-//    toggl.getClientProjects(client.id, true, (error, project) => {
-      console.log('----project----')
-      // console.log(project)
-//    })
-  })
-})
-
 toggl.summaryReport({
   user_agent: "nodejs_client",
   grouping: "clients",
   subgrouping: "projects",
   workspace_id, since, until
 }, (error, reports) => {
-  console.log(getSummaryData(reports.total_grands, since, until))
+  console.log(getSummaryData(reports.total_grand, since, until))
   console.log('----^^summary data^^----')
 
   console.log(getClientData(reports.data, since, until))
@@ -87,11 +75,11 @@ function millisPerDay() {
   return 60 * 60 * 24 * 1000
 }
 
-function getSummaryData(totalGrands, since, until) {
-  let grandPercentage = totalGrands / getTotalMillis(until, since)
+function getSummaryData(totalGrand, since, until) {
+  let grandPercentage = totalGrand / getTotalMillis(until, since)
   return {
-    totalGrands, 
-    totalDays: totalDays(), 
+    totalGrand, 
+    totalDays: totalDays(until, since), 
     grandPercentage,
     grandHoursPerDay: grandPercentage * 24
   }
