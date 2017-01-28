@@ -22,15 +22,33 @@ toggl.getClients((error, clients) => {
 
 toggl.summaryReport({
   user_agent: "nodejs_client",
-  workspace_id: workspace_id,
-  since: since,
-  until: until
+  grouping: "clients",
+  subgrouping: "projects",
+  workspace_id, since, until
 }, (error, reports) => {
-  let totalGrand = reports.total_grand
-  let totalDays = new Date(until) - new Date(since)
-  let totalMillis = 60 * 60 * 24 * 12 * 1000
-  let registrationPercentage = totalGrand / totalMillis
-  let registrationHoursPerDay = totalGrand / totalDays * 24
+  console.log(getSummaryData(reports.total_grand, since, until))
+  console.log('----^^summary data^^----')
+
+  console.log(getClientData(reports.data, since, until))
+  console.log('----^^client data^^----')
 
   console.log(reports.data)
 })
+
+function getClientData(reports, since, until) {
+  let result = []
+  
+//  result.push(reports.map(report => { report.title.client, report.time }))
+  return result
+}
+
+function getSummaryData(totalGrand, since, until) {
+  let millisPerDay = 60 * 60 * 24 * 1000
+  let totalDays = (new Date(until) - new Date(since)) / millisPerDay
+  let totalMillis = 60 * 60 * 24 * totalDays * 1000
+  let grandPercentage = totalGrand / totalMillis
+  return {
+    totalGrand, totalDays, grandPercentage,
+    grandHoursPerDay: grandPercentage * 24
+  }
+}
