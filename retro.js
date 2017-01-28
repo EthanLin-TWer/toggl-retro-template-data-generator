@@ -26,29 +26,73 @@ toggl.summaryReport({
   subgrouping: "projects",
   workspace_id, since, until
 }, (error, reports) => {
-  console.log(getSummaryData(reports.total_grand, since, until))
+  console.log(getSummaryData(reports.total_grands, since, until))
   console.log('----^^summary data^^----')
 
   console.log(getClientData(reports.data, since, until))
   console.log('----^^client data^^----')
 
-  console.log(reports.data)
+  console.log(getProjectsData(reports.data, since, until))
+  console.log('----^^projects data^^----')
+
+  console.log(reports.data[0].items)
 })
 
-function getClientData(reports, since, until) {
-  let result = []
-  
-//  result.push(reports.map(report => { report.title.client, report.time }))
-  return result
+function getProjectsData(reports, since, until) {
+  return reports.map(report => {
+    let client = report.title.client
+    let clientTime = report.time
+
+    return report.items.map(project => {
+      let projectTime = project.time
+      let clientPercentage = projectTime / clientTime
+      let clientHours = clientTime / getTotalMillis(until, since) * 24 
+      return {
+	client, 
+	project: project.title.project,
+	time: projectTime,
+	percentage: clientPercentage,
+	hoursPerDay: clientPercentage * clientHours
+      }
+    })
+  })
 }
 
-function getSummaryData(totalGrand, since, until) {
-  let millisPerDay = 60 * 60 * 24 * 1000
-  let totalDays = (new Date(until) - new Date(since)) / millisPerDay
-  let totalMillis = 60 * 60 * 24 * totalDays * 1000
-  let grandPercentage = totalGrand / totalMillis
+function getClientData(reports, since, until) {
+  
+  return reports.map(report => { 
+    let { title, time } = report
+    let percentage = time / getTotalMillis(until, since)
+    return {
+      client: title.client, 
+      time, percentage,
+      hoursPerDay: percentage * 24
+    }
+  })
+}
+
+function getTotalMillis(until, since) {
+  return millisPerDay() * totalDays(until, since)
+}
+
+function totalDays(until, since) {
+  return (new Date(until) - new Date(since)) / millisPerDay()
+}
+
+function getHours(until, since) {
+  return totalDays(until, since) * 24 
+}
+
+function millisPerDay() {
+  return 60 * 60 * 24 * 1000
+}
+
+function getSummaryData(totalGrands, since, until) {
+  let grandPercentage = totalGrands / getTotalMillis(until, since)
   return {
-    totalGrand, totalDays, grandPercentage,
+    totalGrands, 
+    totalDays: totalDays(), 
+    grandPercentage,
     grandHoursPerDay: grandPercentage * 24
   }
 }
