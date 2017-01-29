@@ -18,10 +18,10 @@ toggl.summaryReport({
   workspace_id, since, until
 }, (error, reports) => {
   let summary = report.getSummaryData(reports.total_grand, since, until)
-  let clientData = report.getClientData(reports.data, since, until)
+  let clientsData = report.getClientData(reports.data, since, until)
   let projectsData = report.getProjectsData(reports.data, since, until)
 
-  let markdown = template.generateMarkdown(summary, clientData, projectsData)
+  let markdown = template.generateMarkdown(summary, clientsData, projectsData)
   console.log(markdown)
 })
 
