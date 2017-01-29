@@ -38,7 +38,7 @@ ${this.generateClientsBriefChart(clients)}
 
 ### Detailed projects report
 
-| Client | Projects | Total registration | Hours / day | Percentage |
+| Client | Projects | Total registration | Percentage | Hours/Day |
 | :---: | :---: | :---: | :---: | :---: |
 ${this.generateProjectsBriefChart(projects)}
 
