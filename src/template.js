@@ -6,7 +6,6 @@ export class Template {
 		this.until = Settings.until
 	}
 	generateMarkdown(summary, clients, projects) {
-		console.log(clients)
 		return this.populateTemplate(summary, clients, projects)
 	}
 
@@ -34,13 +33,16 @@ https://toggl.com/app/reports/summary/1663862/from/${this.since}/to/${this.until
 
 | Client | Total registration | Percentage | Hours/Day |
 | :---: | :---: | :---: | :---: |
-${this.generateClientsTemplate(clients)}
+${this.generateClientsBriefChart(clients)}
 
 ### Detailed projects report
 
 | Client | Projects | Total registration | Hours / day | Percentage |
 | :---: | :---: | :---: | :---: | :---: |
-${this.generateProjectsTemplate(projects)}
+${this.generateProjectsBriefChart(projects)}
+
+${this.generateClientsAndProjectsDetailedSection(clients, projects)}
+
 
 ## Well
 
@@ -67,14 +69,29 @@ ${this.generateProjectsTemplate(projects)}
 		`
 	}
 
-	generateClientsTemplate(clients) {
+	generateClientsBriefChart(clients) {
 
-		return clients.map(client => {
-			return `| ${client.client} | ${client.time} | ${client.percentage} | ${client.hoursPerDay} |`
+		return clients.map(client => `| ${client.client} | ${client.time} | ${client.percentage} | ${client.hoursPerDay} |`)
+					.reduce((cli, ent) => cli + '\n' + ent)
+	}
+
+	generateProjectsBriefChart(projects) {
+		return projects.map(client => {
+			return client.projects.map((project, index) => {
+				let firstColumn = !!index ? '' : client.client
+				return `| ${firstColumn} | ${project.project} | ${project.time} | ${project.percentage} | ${project.hoursPerday} |`
+			}).reduce((pro, ject) => pro + '\n' + ject)
 		}).reduce((cli, ent) => cli + '\n' + ent)
 	}
 
-	generateProjectsTemplate(projects) {
-		return '| | | | | |'
+	generateClientsAndProjectsDetailedSection(clients, projects) {
+		return clients.map(client => {
+			let title = `## ${client.client} ( ${client.percentage} / ${client.hoursPerDay} )`
+			let subgroup = projects.filter(project => project.client === client.client)[0].projects
+				.map(project => `**${project.project} ( ${project.percentage} / ${project.hoursPerDay} )**`)
+				.reduce((sub, group) => sub + '\n\n' + group)
+
+			return `${title}\n\n${subgroup}`
+		}).reduce((cli, ent) => cli + '\n\n' + ent)
 	}
 }

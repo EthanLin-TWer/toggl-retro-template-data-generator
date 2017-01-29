@@ -13,7 +13,7 @@ export class Report {
 					project: project.title.project,
 					time: projectTime, 
 					percentage: clientPercentage,
-					hoursPerday: clientPercentage * clientHours
+					hoursPerDay: clientPercentage * clientHours
 				}
 			})
 
