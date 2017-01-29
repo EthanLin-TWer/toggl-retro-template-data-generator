@@ -8,6 +8,17 @@ Run the following command in the project root to enable live development. Make s
 npm run dev
 ```
 
+## API Token and workspace id
+
+Populate your api token and workspace id in the `settings.json` configuration file as follows with yours before running `npm run generate`. Your api token can be found in the bottom of your profile page at: https://toggl.com/app/profile . 
+
+```json
+{
+  "token": "<your_api_token>",
+  "workspaceId": "<your_workspace_id>"
+}
+```
+
 ## Output 
 
 Running `npm run generate` in project root, and you will see reports like this:
