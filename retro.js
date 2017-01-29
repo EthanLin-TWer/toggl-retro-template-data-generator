@@ -1,7 +1,6 @@
 import TogglClient from 'toggl-api'
-import { Report } from './report'
-import { Template } from './template'
-import Settings from '../settings'
+import { Report, Template } from './src'
+import Settings from './settings'
 
 const apiToken = Settings.token
 const workspace_id = Settings.workspaceId

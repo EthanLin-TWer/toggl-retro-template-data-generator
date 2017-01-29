@@ -5,6 +5,7 @@ export class Template {
 		this.since = Settings.since
 		this.until = Settings.until
 	}
+	
 	generateMarkdown(summary, clients, projects) {
 		return this.populateTemplate(summary, clients, projects)
 	}
