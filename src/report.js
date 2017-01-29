@@ -11,7 +11,7 @@ export class Report {
 				let clientHours = clientTime / this.getTotalMillis(until, since) * 24
 				return {
 					project: project.title.project,
-					time: projectTime, 
+					time: this.toHours(projectTime),
 					percentage: this.percentage(clientPercentage) + '%',
 					hoursPerDay: this.formatHours(clientPercentage * clientHours)
 				}
@@ -19,7 +19,7 @@ export class Report {
 
 			return {
 				client, 
-				time: clientTime, 
+				time: this.toHours(clientTime), 
 				projects
 			}
 		})
@@ -32,7 +32,7 @@ export class Report {
 			let percentage = time / this.getTotalMillis(until, since)
 			return {
 				client: title.client, 
-				time, 
+				time: this.toHours(time), 
 				percentage: this.percentage(percentage) + '%',
 				hoursPerDay: this.formatHours(percentage * 24)
 			}
@@ -42,7 +42,7 @@ export class Report {
 	getSummaryData(totalGrand, since, until) {
 		let grandPercentage = totalGrand / this.getTotalMillis(until, since)
 		return {
-			totalGrand, 
+			totalGrand: this.toHours(totalGrand), 
 			totalDays: this.totalDays(until, since),
 			grandPercentage: this.percentage(grandPercentage) + '%',
 			grandHoursPerDay: this.formatHours(grandPercentage * 24)
@@ -75,5 +75,10 @@ export class Report {
 		let minutes = Math.ceil((hours - hour) * 60)
 
 		return `${hour}h ${minutes}min`
+	}
+
+	toHours(millis) {
+		let hours = millis / 1000 / 60 / 60
+		return this.formatHours(hours)
 	}
 }
