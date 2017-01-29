@@ -12,8 +12,8 @@ export class Report {
 				return {
 					project: project.title.project,
 					time: projectTime, 
-					percentage: clientPercentage,
-					hoursPerDay: clientPercentage * clientHours
+					percentage: this.percentage(clientPercentage) + '%',
+					hoursPerDay: this.formatHours(clientPercentage * clientHours)
 				}
 			})
 
@@ -32,8 +32,9 @@ export class Report {
 			let percentage = time / this.getTotalMillis(until, since)
 			return {
 				client: title.client, 
-				time, percentage,
-				hoursPerDay: percentage * 24
+				time, 
+				percentage: this.percentage(percentage) + '%',
+				hoursPerDay: this.formatHours(percentage * 24)
 			}
 		})
 	}
@@ -42,9 +43,9 @@ export class Report {
 		let grandPercentage = totalGrand / this.getTotalMillis(until, since)
 		return {
 			totalGrand, 
-			totalDays: this.totalDays(until, since), 
-			grandPercentage,
-			grandHoursPerDay: grandPercentage * 24
+			totalDays: this.totalDays(until, since),
+			grandPercentage: this.percentage(grandPercentage) + '%',
+			grandHoursPerDay: this.formatHours(grandPercentage * 24)
 		}
 	}
 
@@ -64,4 +65,15 @@ export class Report {
 		return 60 * 60 * 24 * 1000
 	}
 
+	percentage(number) {
+		if (number <= 0 || number > 1) return number;
+		return (number * 100).toFixed(2)
+	}
+
+	formatHours(hours) {
+		let hour = Math.floor(hours)
+		let minutes = Math.ceil((hours - hour) * 60)
+
+		return `${hour}h ${minutes}min`
+	}
 }
