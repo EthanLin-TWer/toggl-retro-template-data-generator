@@ -57,11 +57,7 @@ export class Report {
 		return (new Date(until) - new Date(since)) / this.millisPerDay()
 	}
 
-	getHours(until, since) {
-		return this.totalDays(until, since) * 24 
-	}
-
-	millisPerDay() {
+   millisPerDay() {
 		return 60 * 60 * 24 * 1000
 	}
 
