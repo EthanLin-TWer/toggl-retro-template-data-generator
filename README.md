@@ -21,7 +21,7 @@ Populate your api token and workspace id in the `settings.json` configuration fi
 
 ## Output 
 
-Running `npm run generate` in project root, and you will see reports like this:
+Running `npm run generate` in project root, and you will see reports like below. You can change the default time period by changing the `since` and/or `until` configuration either in `setting.json` or through command-line arguments like: `npm run generate -- --since=2017-01-20`.  
 
 ### Summary Data 
 

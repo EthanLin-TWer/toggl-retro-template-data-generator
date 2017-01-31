@@ -1,11 +1,13 @@
 import TogglClient from 'toggl-api'
+import Argv from 'minimist'
 import { Report, Template } from './src'
 import Settings from './settings'
 
+const argv = Argv(process.argv.slice(2))
 const apiToken = Settings.token
 const workspace_id = Settings.workspaceId
-const since = Settings.since
-const until = Settings.until
+const since = argv.since || Settings.since 
+const until = argv.until || Settings.until 
 
 let toggl = new TogglClient({ apiToken })
 let report = new Report()
