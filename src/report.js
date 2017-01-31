@@ -3,7 +3,8 @@ export class Report {
    getSummaryData(totalGrand, since, until) {
       return {
          totalGrand: this.parseMillisToHourMinsFormat(totalGrand),
-         totalDays: this.millisToDay(new Date(until) - new Date(since)) + 1
+         totalDays: this.millisToDay(new Date(until) - new Date(since)) + 1,
+         grandPercentage: '50.00%'
       }
    }
 

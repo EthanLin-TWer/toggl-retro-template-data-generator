@@ -10,7 +10,7 @@ describe('report.js', () => {
    let mockReportResponse = () => {
       return [
          {
-            id: 19673694, title: { client: 'work' }, time: 142375304, 
+            id: 19673694, title: { client: 'work' }, time: 142375304,
             items: [
                { title: { project: 'regular-meetings' }, time: 18327000 },
                { title: { project: 'workshops' }, time: 9750000 }
@@ -20,7 +20,7 @@ describe('report.js', () => {
             id: 19673695, title: { client: 'tech-programming' }, time: 51178000,
             items: [
                { title: { project: 'peak-development' }, time: 38312000 },
-               { title: { project: 'project-refactor'}, time: 11571000 }
+               { title: { project: 'project-refactor' }, time: 11571000 }
             ]
          },
          {
@@ -39,7 +39,7 @@ describe('report.js', () => {
       report = new Report()
       reportResponse = mockReportResponse()
    })
-   
+
    describe('getSummaryData()', () => {
       describe('.totalGrand field', () => {
          it('should return 1h 0min when total grand is 1h(60 * 60 * 1000ms)', () => {
@@ -62,34 +62,43 @@ describe('report.js', () => {
             expect(summary.totalGrand).to.equal('1h 25min')
          })
       })
-      
+
       describe('.totalDays field', () => {
          it('should return 1 when date range is 2017-01-01 to 2017-01-01', () => {
             let summary = report.getSummaryData(1000, '2017-01-01', '2017-01-01')
             expect(summary.totalDays).to.equal(1)
          })
-         
+
          it('should return 2 when date range is 2017-01-01 to 2017-01-02', () => {
             let summary = report.getSummaryData(1000, '2017-01-01', '2017-01-02')
             expect(summary.totalDays).to.equal(2)
          })
-         
+
          it('should return 31 when date range is 2017-01-01 to 2017-01-31', () => {
             let summary = report.getSummaryData(1000, '2017-01-01', '2017-01-31')
             expect(summary.totalDays).to.equal(31)
          })
-         
+
          it('should return 29 when date range is 2017-02-01 to 2017-03-01', () => {
             let summary = report.getSummaryData(1000, '2017-02-01', '2017-03-01')
             expect(summary.totalDays).to.equal(29)
          })
+
          it('should return 30 when date range is 2016-02-01 to 2016-03-01', () => {
             let summary = report.getSummaryData(1000, '2016-02-01', '2016-03-01');
             expect(summary.totalDays).to.equal(30)
          });
-         
+
       })
-      
+
+      describe('.grandPercentage field', () => {
+         it('should return 50.00% when total grand is 12h in one day', () => {
+            let summary = report.getSummaryData(12 * 60 * 60 * 1000, '2017-01-01', '2017-01-01')
+            expect(summary.totalGrand).to.equal('12h 0min')
+            expect(summary.totalDays).to.equal(1)
+            expect(summary.grandPercentage).to.equal('50.00%')
+         })
+      })
    })
 
    describe('real data testing', () => {
