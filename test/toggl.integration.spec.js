@@ -7,12 +7,14 @@ describe('Toggl API', () => {
    describe('toggl.summaryReport()', () => {
       let toggl, responseReport
       before((done) => {
-         toggl = new TogglClient({ apiToken: Settings.token })
+         let apiToken = Settings.token || process.argv.slice(2)
          let options = {
             grouping: "clients", subgrouping: "projects",
             workspace_id: Settings.workspaceId,
             since: Settings.since, until: Settings.until
          }
+         
+         toggl = new TogglClient({ apiToken })
          toggl.summaryReport(options, (error, reports) => {
             responseReport = reports
             done()
