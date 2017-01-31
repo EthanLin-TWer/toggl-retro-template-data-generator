@@ -56,6 +56,10 @@ describe('report.js', () => {
          expect(summary.totalGrand).to.equal('1h 25min')
       })
       
+      it('should return 1h 25min when total grand is more than 85min but less than 86min', () => {
+         let summary = report.getSummaryData(85.9 * 60 * 1000, since, until);
+         expect(summary.totalGrand).to.equal('1h 25min')
+      })
    })
 
    describe('real data testing', () => {
