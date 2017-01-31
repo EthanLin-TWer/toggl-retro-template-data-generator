@@ -7,7 +7,7 @@ export class Report {
    }
 
    getSummaryData(totalGrand, since, until) {
-      let totalDays = this.time.millisToDay(new Date(until) - new Date(since)) + 1;
+      let totalDays = this.time.daysBetween(since, until)
       return {
          totalGrand: this.parseMillisToHourMinsFormat(totalGrand),
          totalDays,
