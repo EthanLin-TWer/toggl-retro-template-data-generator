@@ -42,6 +42,7 @@ describe('report.js', () => {
 
    it('should get correct summary data when method getSummaryData() is called', () => {
       let summary = report.getSummaryData(1006076304, since, until);
+      
       expect(summary.totalGrand).to.equal('279h 28min')
       expect(summary.totalDays).to.equal(12)
       expect(summary.grandPercentage).to.equal('97.04%')
@@ -49,6 +50,20 @@ describe('report.js', () => {
    })
 
    it('should get correct client data when method getClientsData() is called', () => {
-      report.getClientData(reportResponse, since, until)
+      let client = report.getClientData(reportResponse, since, until);
+      
+      expect(client.length).to.equal(3)
+      expect(client[0]).to.deep.equal({
+         client: 'work', time: '39h 33min',
+         percentage: '13.73%', hoursPerDay: '3h 18min'
+      })
+      expect(client[1]).to.deep.equal({ 
+         client: 'tech-programming', time: '14h 13min',
+         percentage: '4.94%', hoursPerDay: '1h 12min' 
+      })
+      expect(client[2]).to.deep.equal({ 
+         client: 'basiclife', time: '135h 10min',
+         percentage: '46.93%', hoursPerDay: '11h 16min' 
+      })
    })
 })
