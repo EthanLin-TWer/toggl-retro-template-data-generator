@@ -8,6 +8,7 @@ describe('Toggl API', () => {
    describe('toggl.summaryReport()', () => {
       let toggl, responseReport
       let argv = minimist(process.argv.slice(2))
+      console.log(argv)
       before((done) => {
          let apiToken = Settings.token || process.argv.apiToken
          let options = {
