@@ -8,8 +8,8 @@ export class Report {
       let totalDays = this.time.daysBetween(since, until)
       return {
          totalGrand: this.time.millisToHoursAndMinsFormat(totalGrand),
-         totalDays,
-         grandPercentage: this.percentage(totalGrand / this.time.daysToMillis(totalDays))
+         totalDays: this.time.daysBetween(since, until),
+         grandPercentage: this.percentage(totalGrand / this.time.toMillis(totalDays))
       }
    }
 

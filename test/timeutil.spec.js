@@ -46,4 +46,27 @@ describe('time utils', () => {
          expect(() => time.daysBetween('2016-01-01', '')).to.throw(Error, 'end date cannot be empty')
       })
    })
+   
+   describe('millisToHoursAndMinsFormat(millis)', () => {
+      it('should return 1h 0min when millis is 1h(60 * 60 * 1000ms)', () => {
+         let result = time.millisToHoursAndMinsFormat(60 * 60 * 1000)
+         expect(result).to.equal('1h 0min')
+      })
+      
+      it('should return 2h 0min when millis is 2h(2 * 60 * 60 * 1000ms)', () => {
+         let result = time.millisToHoursAndMinsFormat(2 * 60 * 60 * 1000)
+         expect(result).to.equal('2h 0min')
+      })
+      
+      it('should return 1h 25min when millis is 85min(85 * 60 * 1000ms)', () => {
+         let result = time.millisToHoursAndMinsFormat(85 * 60 * 1000)
+         expect(result).to.equal('1h 25min')
+      })
+      
+      it('should return 1h 25min when 85min < millis < 86min', () => {
+         let result = time.millisToHoursAndMinsFormat(85.9 * 60 * 1000);
+         expect(result).to.equal('1h 25min')
+
+      })
+   })
 })

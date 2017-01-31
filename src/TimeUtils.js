@@ -5,7 +5,7 @@ export class Time {
       this.yyyymmddReg = /\d{4}-\d{2}-\d{2}/
    }
 
-   daysToMillis(days) {
+   toMillis(days) {
       //           hours mins seconds millis
       return days * 24  * 60   * 60   * 1000
    }
