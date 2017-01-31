@@ -16,7 +16,7 @@ export class Report {
    }
 
    percentage(number) {
-      return number * 100 + '.00%'
+      return `${(number * 100).toFixed(2)}%`
    }
 
    parseMillisToHourMinsFormat(totalGrand) {
