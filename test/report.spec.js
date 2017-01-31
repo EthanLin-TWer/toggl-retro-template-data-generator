@@ -98,6 +98,10 @@ describe('report.js', () => {
             expect(summary.totalDays).to.equal(1)
             expect(summary.grandPercentage).to.equal('50.00%')
          })
+         it('should return 75.00% when total grand is 18h in one day', () => {
+            let summary = report.getSummaryData(18 * 60 * 60 * 1000, '2017-01-01', '2017-01-01');
+            expect(summary.grandPercentage).to.equal('75.00%')
+         })
       })
    })
 
