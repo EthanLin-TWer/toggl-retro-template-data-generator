@@ -7,7 +7,8 @@ export class Report {
    }
 
    parseMillisToHourMinsFormat(totalGrand) {
-      let hours = totalGrand / 1000 / 60 / 60;
-      return `${hours}h 0min`
+      let hours = Math.round(totalGrand / 1000 / 60 / 60)
+      let minutes = totalGrand / 1000 / 60 - hours * 60
+      return `${hours}h ${minutes}min`
    }
 }
