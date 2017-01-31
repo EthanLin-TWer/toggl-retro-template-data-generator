@@ -12,23 +12,23 @@ describe('report.js', () => {
          {
             id: 19673694, title: { client: 'work' }, time: 142375304, 
             items: [
-               { title: 'regular-meetings', time: 18327000 },
-               { title: 'workshops', time: 9750000 }
+               { title: { project: 'regular-meetings' }, time: 18327000 },
+               { title: { project: 'workshops' }, time: 9750000 }
             ]
          },
          {
             id: 19673695, title: { client: 'tech-programming' }, time: 51178000,
             items: [
-               { title: 'peak-development', time: 38312000 },
-               { title: 'project-refactor', time: 11571000 }
+               { title: { client: 'peak-development' }, time: 38312000 },
+               { title: { client: 'project-refactor'}, time: 11571000 }
             ]
          },
          {
             id: 19673693, title: { client: 'basiclife' }, time: 486582000,
             items: [
-               { title: 'eating', time: 44589000 },
-               { title: 'sleeping', time: 249265000 },
-               { title: 'shower', time: 18523000 }
+               { title: { client: 'eating' }, time: 44589000 },
+               { title: { client: 'sleeping' }, time: 249265000 },
+               { title: { client: 'shower' }, time: 18523000 }
             ]
          }
 
@@ -64,6 +64,23 @@ describe('report.js', () => {
       expect(client[2]).to.deep.equal({ 
          client: 'basiclife', time: '135h 10min',
          percentage: '46.93%', hoursPerDay: '11h 16min' 
+      })
+   })
+   
+   it('should get correct projects data when method getProjectsData() is called', () => {
+      let projects = report.getProjectsData(reportResponse, since, until);
+      
+      console.log(projects[0])
+      expect(projects.length).to.equal(3)
+      expect(projects[0]).to.deep.equal({ 
+         client: 'work', time: '39h 33min',
+         projects: [{ 
+            project: 'regular-meetings', time: '5h 6min',
+            hoursPerDay: '0h 26min', percentage: '12.87%'
+         }, { 
+            project: 'workshops', time: '2h 43min',
+            hoursPerDay: '0h 14min', percentage: '6.85%'
+         }] 
       })
    })
 })
