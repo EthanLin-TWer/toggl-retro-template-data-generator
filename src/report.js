@@ -1,26 +1,22 @@
+import { Time } from './TimeUtils'
+
 export class Report {
 
+   constructor() {
+      this.time = new Time()
+   }
+
    getSummaryData(totalGrand, since, until) {
-      let totalDays = this.millisToDay(new Date(until) - new Date(since)) + 1;
+      let totalDays = this.time.millisToDay(new Date(until) - new Date(since)) + 1;
       return {
          totalGrand: this.parseMillisToHourMinsFormat(totalGrand),
          totalDays,
-         grandPercentage: this.percentage(totalGrand / this.millis(totalDays)) 
+         grandPercentage: this.percentage(totalGrand / this.time.daysToMillis(totalDays))
       }
    }
 
    percentage(number) {
       return number * 100 + '.00%'
-   }
-
-   millis(days) {
-      //           hours mins seconds millis
-      return days * 24  * 60   * 60   * 1000
-   }
-
-   millisToDay(millis) {
-      //             seconds mins hours day
-      return millis / 1000  / 60 / 60 / 24
    }
 
    parseMillisToHourMinsFormat(totalGrand) {
