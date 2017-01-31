@@ -40,13 +40,9 @@ export class Report {
 	}
 
 	getSummaryData(totalGrand, since, until) {
-		let grandPercentage = totalGrand / this.getTotalMillis(until, since)
-		return {
-			totalGrand: this.toHours(totalGrand), 
-			totalDays: this.totalDays(until, since),
-			grandPercentage: this.percentage(grandPercentage) + '%',
-			grandHoursPerDay: this.formatHours(grandPercentage * 24)
-		}
+      return {
+         totalGrand: '1h 0min'
+      }
 	}
 
 	getTotalMillis(until, since) {
