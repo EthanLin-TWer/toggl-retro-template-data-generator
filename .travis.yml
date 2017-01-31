@@ -1,6 +1,9 @@
 language: node_js
 node_js:
-  - "6.9.4"
-  - "7.4.0"
-cache: 
+- 6.9.4
+- 7.4.0
+cache:
   yarn: true
+env:
+  global:
+    secure: s7W0sa3/OMm+5/WQtLNPeUhsyh9QL3Lj4/H8ce/OaoZopmlFbHqi3RWqWJEhcwV+8/bwqjSUrAz+qQfOrVqi8pvGRM49Ng2OZZlxj77cWnN+2sT+UgOYj4pc/jCsJO+yrHt6gijIDf7PiLmy9aDb7Bd9v39WUJlkpiIoPt6Pog2hl5hyq1A1I3c1emmYKSYTRtPo1IQwA6VNPhcbh2b8yfS5irp4YMcRB3/C2pjMYjWGtmDj7uashkBy5kRLa4mUx7QAr2DqBBvSpHBzftIQwup3irCpj2fuDBhx+4w8WI+ZB2OyQjZfP0kCMJuRGDm3mlbRmKvjPiVRTLbAO2ac4VNrLL8Kq7wGyyf6csF23B+Jx5TQz7dhAIdEynhSWzQDSa5VaA5a7UisCfGHVusR4AjwWT+ozvN6fhyshkPqXgxsm5zepK8SZRkbLzYTyiF0BTFp0B5s+eSMWciL5ZvlvX5APPTE55//l8PBQPt47fWcltdoTDOTJrOXo8gVmypchsLlmp7rm66hSwMhyYWjaCs52SQK0zrrtLq3mT9euhV342xB3m6XfO3AiWWCVY2yrbdp61PG307Y0WTfPrg9+4sqhztn60KYdD1B3a0Ls8ktwzipI98wkZSReZ03FewKqgvNTlJWZOyiJhBdMxSL+JUhc+KhrZkJHRfJ79HClsU=
