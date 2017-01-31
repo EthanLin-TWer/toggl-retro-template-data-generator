@@ -11,6 +11,8 @@ export class Time {
    }
    
    daysBetween(start, end) {
+      if (start.trim().length === 0) throw new Error('start date cannot be empty')
+      if (end.trim().length === 0) throw new Error('end date cannot be empty')
       if (!this.yyyymmddReg.test(start)) throw new Error('start date should be in yyyy-mm-dd format')
       if (!this.yyyymmddReg.test(end)) throw new Error('end date should be in yyyy-mm-dd format')
       if (this.millisBetweenDays(start, end) < 0) throw new Error('start date can\'t be later than end date')

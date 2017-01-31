@@ -40,5 +40,10 @@ describe('time utils', () => {
          expect(() => time.daysBetween('2016-01-01', '01/30/2016')).to.throw(Error, 'end date should be in yyyy-mm-dd format')
          expect(() => time.daysBetween('01/30/2016', '2016-02-01')).to.throw(Error, 'start date should be in yyyy-mm-dd format')
       })
+      
+      it('should throw an error when neither start date nor end date is empty', () => {
+         expect(() => time.daysBetween('', '2016-01-01')).to.throw(Error, 'start date cannot be empty')
+         expect(() => time.daysBetween('2016-01-01', '')).to.throw(Error, 'end date cannot be empty')
+      })
    })
 })
