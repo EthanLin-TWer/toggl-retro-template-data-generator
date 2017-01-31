@@ -19,16 +19,16 @@ describe('report.js', () => {
          {
             id: 19673695, title: { client: 'tech-programming' }, time: 51178000,
             items: [
-               { title: { client: 'peak-development' }, time: 38312000 },
-               { title: { client: 'project-refactor'}, time: 11571000 }
+               { title: { project: 'peak-development' }, time: 38312000 },
+               { title: { project: 'project-refactor'}, time: 11571000 }
             ]
          },
          {
             id: 19673693, title: { client: 'basiclife' }, time: 486582000,
             items: [
-               { title: { client: 'eating' }, time: 44589000 },
-               { title: { client: 'sleeping' }, time: 249265000 },
-               { title: { client: 'shower' }, time: 18523000 }
+               { title: { project: 'eating' }, time: 44589000 },
+               { title: { project: 'sleeping' }, time: 249265000 },
+               { title: { project: 'shower' }, time: 18523000 }
             ]
          }
 
@@ -70,7 +70,6 @@ describe('report.js', () => {
    it('should get correct projects data when method getProjectsData() is called', () => {
       let projects = report.getProjectsData(reportResponse, since, until);
       
-      console.log(projects[0])
       expect(projects.length).to.equal(3)
       expect(projects[0]).to.deep.equal({ 
          client: 'work', time: '39h 33min',
@@ -81,6 +80,16 @@ describe('report.js', () => {
             project: 'workshops', time: '2h 43min',
             hoursPerDay: '0h 14min', percentage: '6.85%'
          }] 
+      })
+      expect(projects[1]).to.deep.equal({
+         client: 'tech-programming', time: '14h 13min',
+         projects: [{
+            project: 'peak-development', time: '10h 39min',
+            hoursPerDay: '0h 54min', percentage: '74.86%'
+         }, {
+            project: 'project-refactor', time: '3h 13min',
+            hoursPerDay: '0h 17min', percentage: '22.61%'
+         }]
       })
    })
 })
