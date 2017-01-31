@@ -3,10 +3,15 @@ export class Report {
    getSummaryData(totalGrand, since, until) {
       return {
          totalGrand: this.parseMillisToHourMinsFormat(totalGrand),
-         totalDays: 1
+         totalDays: this.millisToDay(new Date(until) - new Date(since)) + 1
       }
    }
 
+   millisToDay(millis) {
+      //             seconds mins hours day
+      return millis / 1000  / 60 / 60 / 24
+   }
+   
    parseMillisToHourMinsFormat(totalGrand) {
       let hours = Math.floor(totalGrand / 1000 / 60 / 60)
       let minutes = Math.floor(totalGrand / 1000 / 60 - hours * 60)
