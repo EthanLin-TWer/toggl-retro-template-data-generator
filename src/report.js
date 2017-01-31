@@ -1,9 +1,7 @@
-import { Time } from './TimeUtils'
-
 export class Report {
 
-   constructor() {
-      this.time = new Time()
+   constructor(time) {
+      this.time = time
    }
 
    getSummaryData(totalGrand, since, until) {

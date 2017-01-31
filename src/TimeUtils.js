@@ -6,7 +6,7 @@ export class Time {
    }
 
    daysBetween(start, end) {
-      let millisBetween = new Date(end) - new Date(start);
+      let millisBetween = new Date(end) - new Date(start)
       return this.millisToDay(millisBetween) + 1
    }
    

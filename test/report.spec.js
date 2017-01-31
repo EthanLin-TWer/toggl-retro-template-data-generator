@@ -1,6 +1,6 @@
 import { describe, beforeEach, it } from "mocha"
 import { expect } from 'chai'
-import { Report } from '../src/report'
+import { Report, Time } from '../src'
 
 describe('report.js', () => {
    let report
@@ -36,7 +36,7 @@ describe('report.js', () => {
    }
 
    beforeEach(() => {
-      report = new Report()
+      report = new Report(new Time())
       reportResponse = mockReportResponse()
    })
 
@@ -64,31 +64,7 @@ describe('report.js', () => {
       })
 
       describe('.totalDays field', () => {
-         it('should return 1 when date range is 2017-01-01 to 2017-01-01', () => {
-            let summary = report.getSummaryData(1000, '2017-01-01', '2017-01-01')
-            expect(summary.totalDays).to.equal(1)
-         })
-
-         it('should return 2 when date range is 2017-01-01 to 2017-01-02', () => {
-            let summary = report.getSummaryData(1000, '2017-01-01', '2017-01-02')
-            expect(summary.totalDays).to.equal(2)
-         })
-
-         it('should return 31 when date range is 2017-01-01 to 2017-01-31', () => {
-            let summary = report.getSummaryData(1000, '2017-01-01', '2017-01-31')
-            expect(summary.totalDays).to.equal(31)
-         })
-
-         it('should return 29 when date range is 2017-02-01 to 2017-03-01', () => {
-            let summary = report.getSummaryData(1000, '2017-02-01', '2017-03-01')
-            expect(summary.totalDays).to.equal(29)
-         })
-
-         it('should return 30 when date range is 2016-02-01 to 2016-03-01', () => {
-            let summary = report.getSummaryData(1000, '2016-02-01', '2016-03-01');
-            expect(summary.totalDays).to.equal(30)
-         });
-
+         
       })
 
       describe('.grandPercentage field', () => {
