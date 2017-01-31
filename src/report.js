@@ -2,7 +2,8 @@ export class Report {
 
    getSummaryData(totalGrand, since, until) {
       return {
-         totalGrand: this.parseMillisToHourMinsFormat(totalGrand)
+         totalGrand: this.parseMillisToHourMinsFormat(totalGrand),
+         totalDays: 1
       }
    }
 

@@ -41,25 +41,35 @@ describe('report.js', () => {
    })
    
    describe('getSummaryData()', () => {
-      it('should return 1h 0min when total grand is 1h(60 * 60 * 1000ms)', () => {
-         let summary = report.getSummaryData(60 * 60 * 1000, since, until);
-         expect(summary.totalGrand).to.equal('1h 0min')
+      describe('.totalGrand field', () => {
+         it('should return 1h 0min when total grand is 1h(60 * 60 * 1000ms)', () => {
+            let summary = report.getSummaryData(60 * 60 * 1000, since, until);
+            expect(summary.totalGrand).to.equal('1h 0min')
+         })
+
+         it('should return 2h 0min when total grand is 2h(2 * 60 * 60 * 1000ms)', () => {
+            let summary = report.getSummaryData(2 * 60 * 60 * 1000, since, until);
+            expect(summary.totalGrand).to.equal('2h 0min')
+         })
+
+         it('should return 1h 25min when total grand is 85min(85 * 60 * 1000ms)', () => {
+            let summary = report.getSummaryData(85 * 60 * 1000, since, until);
+            expect(summary.totalGrand).to.equal('1h 25min')
+         })
+
+         it('should return 1h 25min when total grand is more than 85min but less than 86min', () => {
+            let summary = report.getSummaryData(85.9 * 60 * 1000, since, until);
+            expect(summary.totalGrand).to.equal('1h 25min')
+         })
       })
       
-      it('should return 2h 0min when total grand is 2h(2 * 60 * 60 * 1000ms)', () => {
-         let summary = report.getSummaryData(2 * 60 * 60 * 1000, since, until);
-         expect(summary.totalGrand).to.equal('2h 0min')
+      describe('.totalDays field', () => {
+         it('should return 1 when date range is 2017-01-01 to 2017-01-01', () => {
+            let summary = report.getSummaryData(1, '2017-01-01', '2017-01-01');
+            expect(summary.totalDays).to.equal(1)
+         })
       })
       
-      it('should return 1h 25min when total grand is 85min(85 * 60 * 1000ms)', () => {
-         let summary = report.getSummaryData(85 * 60 * 1000, since, until);
-         expect(summary.totalGrand).to.equal('1h 25min')
-      })
-      
-      it('should return 1h 25min when total grand is more than 85min but less than 86min', () => {
-         let summary = report.getSummaryData(85.9 * 60 * 1000, since, until);
-         expect(summary.totalGrand).to.equal('1h 25min')
-      })
    })
 
    describe('real data testing', () => {
