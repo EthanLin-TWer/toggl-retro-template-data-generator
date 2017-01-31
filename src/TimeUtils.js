@@ -7,6 +7,8 @@ export class Time {
 
    daysBetween(start, end) {
       let millisBetween = new Date(end) - new Date(start)
+      if (millisBetween < 0) throw new Error('start date can\'t be later than end date')
+      
       return this.millisToDay(millisBetween) + 1
    }
    
