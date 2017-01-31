@@ -1,15 +1,25 @@
 export class Time {
 
+
+   constructor(yyyymmddReg) {
+      this.yyyymmddReg = /\d{4}-\d{2}-\d{2}/
+   }
+
    daysToMillis(days) {
       //           hours mins seconds millis
       return days * 24  * 60   * 60   * 1000
    }
-
+   
    daysBetween(start, end) {
-      let millisBetween = new Date(end) - new Date(start)
-      if (millisBetween < 0) throw new Error('start date can\'t be later than end date')
+      if (!this.yyyymmddReg.test(start)) throw new Error('start date should be in yyyy-mm-dd format')
+      if (!this.yyyymmddReg.test(end)) throw new Error('end date should be in yyyy-mm-dd format')
+      if (this.millisBetweenDays(start, end) < 0) throw new Error('start date can\'t be later than end date')
       
-      return this.millisToDay(millisBetween) + 1
+      return this.millisToDay(this.millisBetweenDays(start, end)) + 1
+   }
+
+   millisBetweenDays(start, end) {
+      return new Date(end) - new Date(start);
    }
    
    millisToDay(millis) {

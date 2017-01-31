@@ -35,5 +35,10 @@ describe('time utils', () => {
       it('should throw an error when start date is later than end date', () => {
          expect(() => time.daysBetween('2016-01-01', '2015-12-30')).to.throw(Error, 'start date can\'t be later than end date')
       })
+      
+      it('should throw an error when neither start date nor end date does not match yyyy-mm-dd format', () => {
+         expect(() => time.daysBetween('2016-01-01', '01/30/2016')).to.throw(Error, 'end date should be in yyyy-mm-dd format')
+         expect(() => time.daysBetween('01/30/2016', '2016-02-01')).to.throw(Error, 'start date should be in yyyy-mm-dd format')
+      })
    })
 })
