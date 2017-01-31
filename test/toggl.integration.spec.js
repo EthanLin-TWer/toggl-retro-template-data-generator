@@ -1,13 +1,15 @@
 import { describe, before, it } from "mocha"
 import { expect } from 'chai'
+import minimist from 'minimist'
 import TogglClient from 'toggl-api'
 import Settings from '../settings'
 
 describe('Toggl API', () => {
    describe('toggl.summaryReport()', () => {
       let toggl, responseReport
+      let argv = minimist(process.argv.slice(2))
       before((done) => {
-         let apiToken = Settings.token || process.argv.slice(2)
+         let apiToken = Settings.token || process.argv.apiToken
          let options = {
             grouping: "clients", subgrouping: "projects",
             workspace_id: Settings.workspaceId,

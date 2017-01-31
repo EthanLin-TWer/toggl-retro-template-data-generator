@@ -11,6 +11,7 @@
     "babel-preset-es2015": "^6.22.0",
     "babel-register": "^6.22.0",
     "chai": "^3.5.0",
+    "minimist": "^1.2.0",
     "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
     "sinon": "^1.17.7"
@@ -18,7 +19,7 @@
   "scripts": {
     "dev": "nodemon --exec babel-node ./retro.js",
     "test": "mocha test/**/*.spec.js --require babel-register --timeout 10000",
-    "ci": "npm run test $apiToken",
+    "ci": "npm run test -- --apiToken=$apiToken",
     "generate": "babel-node ./retro.js"
   },
   "author": "",
