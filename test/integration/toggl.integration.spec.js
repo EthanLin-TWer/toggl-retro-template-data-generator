@@ -2,7 +2,7 @@ import { describe, before, it } from "mocha"
 import { expect } from 'chai'
 import argv from 'minimist'
 import TogglClient from 'toggl-api'
-import Settings from '../settings'
+import Settings from '../../settings'
 
 describe('Toggl API', () => {
    describe('toggl.summaryReport()', () => {

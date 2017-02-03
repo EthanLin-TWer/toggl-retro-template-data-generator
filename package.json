@@ -18,7 +18,7 @@
   },
   "scripts": {
     "dev": "nodemon --exec babel-node ./retro.js",
-    "test": "mocha test/report.spec.js test/timeutil.spec.js --require babel-register --timeout 10000",
+    "test": "mocha test/unit/*.spec.js --require babel-register --timeout 10000",
     "ci": "npm run test -- --apiToken=$apiToken",
     "generate": "babel-node ./retro.js"
   },

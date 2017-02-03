@@ -1,7 +1,7 @@
 import { describe, beforeEach, it } from "mocha"
 import { expect } from 'chai'
 import sinon from 'sinon'
-import { Report, Time } from '../src'
+import { Report, Time } from '../../src'
 
 describe('report.js', () => {
    let report
@@ -45,11 +45,12 @@ describe('report.js', () => {
       it('should mock ', () => {
          let time = new Time()
          let daysBetween = sinon.spy(time, 'daysBetween')
-         let millisToHoursAndMinsFormat = sinon.spy(time, 'millisToHoursAndMinsFormat')
+         let millisToHoursAndMins = sinon.spy(time, 'millisToHoursAndMinsFormat')
          report = new Report(time)
          
          let summary = report.getSummaryData(1000, '2016-01-01', '2016-01-01')
          expect(daysBetween.calledWith('2016-01-01', '2016-01-01')).to.be.true
+         expect(millisToHoursAndMins.calledWith(1000)).to.be.true
       })
 
       describe('.grandPercentage field', () => {
