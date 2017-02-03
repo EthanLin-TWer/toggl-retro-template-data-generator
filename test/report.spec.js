@@ -1,5 +1,6 @@
 import { describe, beforeEach, it } from "mocha"
 import { expect } from 'chai'
+import sinon from 'sinon'
 import { Report, Time } from '../src'
 
 describe('report.js', () => {
@@ -41,7 +42,15 @@ describe('report.js', () => {
    })
 
    describe('getSummaryData()', () => {
-      it('should mock ')
+      it('should mock ', () => {
+         let time = new Time()
+         let daysBetween = sinon.spy(time, 'daysBetween')
+         let millisToHoursAndMinsFormat = sinon.spy(time, 'millisToHoursAndMinsFormat')
+         report = new Report(time)
+         
+         let summary = report.getSummaryData(1000, '2016-01-01', '2016-01-01')
+         expect(daysBetween.calledWith('2016-01-01', '2016-01-01')).to.be.true
+      })
 
       describe('.grandPercentage field', () => {
          it('should return 50.00% when total grand is 12h in one day', () => {
@@ -50,22 +59,22 @@ describe('report.js', () => {
             expect(summary.totalDays).to.equal(1)
             expect(summary.grandPercentage).to.equal('50.00%')
          })
-         
+
          it('should return 100.00% when total grand is 24h in one day', () => {
             let summary = report.getSummaryData(24 * 60 * 60 * 1000, '2017-01-01', '2017-01-01')
             expect(summary.grandPercentage).to.equal('100.00%')
          })
-         
+
          it('should return 83.33% when total grand is 20h in one day', () => {
             let summary = report.getSummaryData(20 * 60 * 60 * 1000, '2017-01-01', '2017-01-01')
             expect(summary.grandPercentage).to.equal('83.33%')
          })
-         
+
          it('should return 97.92% when total grand is 23.5h in one day', () => {
             let summary = report.getSummaryData(23.5 * 60 * 60 * 1000, '2017-01-01', '2017-01-01')
             expect(summary.grandPercentage).to.equal('97.92%')
          })
-         
+
          it('should return 0.00% when total grand is 0 millis', () => {
             let summary = report.getSummaryData(0, '2017-01-01', '2017-01-01')
             expect(summary.grandPercentage).to.equal('0.00%')
