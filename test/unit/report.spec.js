@@ -106,6 +106,15 @@ describe('report.js', () => {
         expect(summary.grandHoursPerDay).to.equal('11h 0min')
       })
 
+      it('should return 6h 50min when total grand is 27.34h in 4 days', () => {
+        let summary = report.getSummaryData(27.34 * 60 * 60 * 1000, feb1st, '2017-02-04')
+        expect(summary.grandHoursPerDay).to.equal('6h 50min')
+      })
+      
+      it('should return 0h 28min when total grand is 6.2h in 13 days', () => {
+        let summary = report.getSummaryData(6.2 * 60 * 60 * 1000, since, until)
+        expect(summary.grandHoursPerDay).to.equal('0h 28min')
+      })
     })
   })
 
