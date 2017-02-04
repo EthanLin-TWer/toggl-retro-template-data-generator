@@ -6,6 +6,28 @@ import { TimeService } from '../../src/time-service'
 describe('time service', () => {
   let timeService = new TimeService()
 
+  describe('toMillis(day)', () => {
+    it('should return 86400000 millis for 1 day', () => {
+      expect(timeService.toMillis(1)).to.equal(86400000)
+    })
+
+    it('should return 43200000 millis for half a day', () => {
+      expect(timeService.toMillis(0.5)).to.equal(43200000)
+    })
+
+    it('should return 172800000 millis for 2 days', () => {
+      expect(timeService.toMillis(2)).to.equal(172800000)
+    })
+
+    it('should return 3600000 millis for 1 hour(1/24 day)', () => {
+      expect(timeService.toMillis(1 / 24)).to.equal(3600000)
+    })
+    
+    it('should return 60000 millis for 1 minute(1/1440 day)', () => {
+      // expect(timeService.toMillis(1 / 24 / 60)).to.equal(60000)
+    })
+  })
+
   describe('daysBetween(start, end)', () => {
     it('should return 1 when start date and end date is the same day', () => {
       let daysBetween = timeService.daysBetween('2017-01-01', '2017-01-01')
