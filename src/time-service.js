@@ -6,7 +6,7 @@ export class TimeService {
 
   toMillis(days) {
     //           hours mins seconds millis
-    return days * 24 * 60 * 60 * 1000
+    return Math.round(days * 24 * 60 * 60 * 1000)
   }
 
   millisToHoursAndMinsFormat(millis) {

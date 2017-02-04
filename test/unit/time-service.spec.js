@@ -24,7 +24,7 @@ describe('time service', () => {
     })
     
     it('should return 60000 millis for 1 minute(1/1440 day)', () => {
-      // expect(timeService.toMillis(1 / 24 / 60)).to.equal(60000)
+      expect(timeService.toMillis(1 / 24 / 60)).to.equal(60000)
     })
   })
 
