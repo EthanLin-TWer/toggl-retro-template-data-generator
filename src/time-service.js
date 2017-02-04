@@ -1,6 +1,5 @@
-export class Time {
-
-
+export class TimeService {
+  
    constructor(yyyymmddReg) {
       this.yyyymmddReg = /\d{4}-\d{2}-\d{2}/
    }

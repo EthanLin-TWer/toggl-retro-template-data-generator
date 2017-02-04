@@ -1,15 +1,15 @@
 export class Report {
 
-   constructor(time) {
-      this.time = time
+   constructor(timeService) {
+      this.timeService = timeService
    }
 
    getSummaryData(totalGrand, since, until) {
-      let totalDays = this.time.daysBetween(since, until)
+      let totalDays = this.timeService.daysBetween(since, until)
       return {
-         totalGrand: this.time.millisToHoursAndMinsFormat(totalGrand),
-         totalDays: this.time.daysBetween(since, until),
-         grandPercentage: this.percentage(totalGrand / this.time.toMillis(totalDays))
+         totalGrand: this.timeService.millisToHoursAndMinsFormat(totalGrand),
+         totalDays: this.timeService.daysBetween(since, until),
+         grandPercentage: this.percentage(totalGrand / this.timeService.toMillis(totalDays))
       }
    }
 
