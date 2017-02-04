@@ -1,17 +1,17 @@
 import Settings from '../settings'
 
 export class Template {
-	constructor() {
-		this.since = Settings.since
-		this.until = Settings.until
-	}
-	
-	generateMarkdown(summary, clients, projects) {
-		return this.populateTemplate(summary, clients, projects)
-	}
+  constructor() {
+    this.since = Settings.since
+    this.until = Settings.until
+  }
 
-	populateTemplate(summary, clients, projects) {
-		return `
+  generateMarkdown(summary, clients, projects) {
+    return this.populateTemplate(summary, clients, projects)
+  }
+
+  populateTemplate(summary, clients, projects) {
+    return `
 ## Overview
 
 https://toggl.com/app/reports/summary/1663862/from/${this.since}/to/${this.until}/billable/both
@@ -68,31 +68,31 @@ ${this.generateClientsAndProjectsDetailedSection(clients, projects)}
 ## References 
 
 		`
-	}
+  }
 
-	generateClientsBriefChart(clients) {
+  generateClientsBriefChart(clients) {
 
-		return clients.map(client => `| ${client.client} | ${client.time} | ${client.percentage} | ${client.hoursPerDay} |`)
-					.reduce((cli, ent) => cli + '\n' + ent)
-	}
+    return clients.map(client => `| ${client.client} | ${client.time} | ${client.percentage} | ${client.hoursPerDay} |`)
+      .reduce((cli, ent) => cli + '\n' + ent)
+  }
 
-	generateProjectsBriefChart(projects) {
-		return projects.map(client => {
-			return client.projects.map((project, index) => {
-				let firstColumn = !!index ? '' : client.client
-				return `| ${firstColumn} | ${project.project} | ${project.time} | ${project.percentage} | ${project.hoursPerDay} |`
-			}).reduce((pro, ject) => pro + '\n' + ject)
-		}).reduce((cli, ent) => cli + '\n' + ent)
-	}
+  generateProjectsBriefChart(projects) {
+    return projects.map(client => {
+      return client.projects.map((project, index) => {
+        let firstColumn = !!index ? '' : client.client
+        return `| ${firstColumn} | ${project.project} | ${project.time} | ${project.percentage} | ${project.hoursPerDay} |`
+      }).reduce((pro, ject) => pro + '\n' + ject)
+    }).reduce((cli, ent) => cli + '\n' + ent)
+  }
 
-	generateClientsAndProjectsDetailedSection(clients, projects) {
-		return clients.map(client => {
-			let title = `## ${client.client} ( ${client.percentage} / ${client.hoursPerDay} )`
-			let subgroup = projects.filter(project => project.client === client.client)[0].projects
-				.map(project => `**${project.project} ( ${project.percentage} / ${project.hoursPerDay} )**`)
-				.reduce((sub, group) => sub + '\n\n' + group)
+  generateClientsAndProjectsDetailedSection(clients, projects) {
+    return clients.map(client => {
+      let title = `## ${client.client} ( ${client.percentage} / ${client.hoursPerDay} )`
+      let subgroup = projects.filter(project => project.client === client.client)[0].projects
+        .map(project => `**${project.project} ( ${project.percentage} / ${project.hoursPerDay} )**`)
+        .reduce((sub, group) => sub + '\n\n' + group)
 
-			return `${title}\n\n${subgroup}`
-		}).reduce((cli, ent) => cli + '\n\n' + ent)
-	}
+      return `${title}\n\n${subgroup}`
+    }).reduce((cli, ent) => cli + '\n\n' + ent)
+  }
 }
