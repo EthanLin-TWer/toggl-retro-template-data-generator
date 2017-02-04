@@ -119,13 +119,13 @@ describe('report.js', () => {
   })
 
   describe('real data testing', () => {
-    it.skip('should get correct summary data when method getSummaryData() is called', () => {
-      let summary = report.getSummaryData(1006076304, since, until);
+    it('should get correct summary data when method getSummaryData() is called', () => {
+      let summary = report.getSummaryData(1006076304, since, until)
 
-      expect(summary.totalGrand).to.equal('279h 28min')
-      expect(summary.totalDays).to.equal(12)
-      expect(summary.grandPercentage).to.equal('97.04%')
-      expect(summary.grandHoursPerDay).to.equal('23h 18min')
+      expect(summary.totalGrand).to.equal('279h 27min')
+      expect(summary.totalDays).to.equal(13)
+      expect(summary.grandPercentage).to.equal('89.57%')
+      expect(summary.grandHoursPerDay).to.equal('21h 29min')
     })
 
     it.skip('should get correct client data when method getClientsData() is called', () => {
