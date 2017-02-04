@@ -42,15 +42,22 @@ describe('report.js', () => {
   })
 
   describe('getSummaryData()', () => {
-    it('should call time ', () => {
+    it('should call time service to calculate summary data', () => {
       let timeService = new TimeService()
       let daysBetween = sinon.spy(timeService, 'daysBetween')
       let millisToHoursAndMins = sinon.spy(timeService, 'millisToHoursAndMinsFormat')
+      let toMillis = sinon.spy(timeService, 'toMillis');
       report = new Report(timeService)
 
-      let summary = report.getSummaryData(1000, '2016-01-01', '2016-01-01')
+      let summary = report.getSummaryData(1000 * 60, '2016-01-01', '2016-01-01')
+      
       expect(daysBetween.calledWith('2016-01-01', '2016-01-01')).to.be.true
-      expect(millisToHoursAndMins.calledWith(1000)).to.be.true
+      expect(millisToHoursAndMins.calledWith(1000 * 60)).to.be.true
+      expect(toMillis.calledWith(1)).to.be.true
+      
+      expect(summary.totalGrand).to.equal('0h 1min')
+      expect(summary.totalDays).to.equal(1)
+      expect(summary.grandPercentage).to.equal('0.07%')
     })
 
     describe('.grandPercentage field', () => {
