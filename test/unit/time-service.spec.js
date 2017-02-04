@@ -1,9 +1,9 @@
-import { describe, it, beforeEach } from 'mocha'
+import { describe, it } from 'mocha'
 import { expect } from 'chai'
 
 import { TimeService } from '../../src/time-service'
 
-describe('time utils', () => {
+describe('time service', () => {
    let timeService = new TimeService()
    
    describe('daysBetween(start, end)', () => {
