@@ -96,15 +96,16 @@ describe('report.js', () => {
     })
 
     describe('.grandHoursPerDay field', () => {
-      it('should return 23h 0min when total grand is 23h in one day', () => {
-        let summary = report.getSummaryData(23 * 60 * 60 * 1000, feb1st, feb1st)
-        expect(summary.grandHoursPerDay).to.equal('23h 0min')
-      })
-
       it('should return 22h 0min when total grand is 22h in one day', () => {
         let summary = report.getSummaryData(22 * 60 * 60 * 1000, feb1st, feb1st)
         expect(summary.grandHoursPerDay).to.equal('22h 0min')
       })
+
+      it('should return 11h 0min when total grand is 22h in two days', () => {
+        let summary = report.getSummaryData(22 * 60 * 60 * 1000, feb1st, '2017-02-02')
+        expect(summary.grandHoursPerDay).to.equal('11h 0min')
+      })
+
     })
   })
 

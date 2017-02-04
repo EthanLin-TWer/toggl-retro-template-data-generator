@@ -9,12 +9,12 @@ export class Report {
     return {
       totalGrand: this.timeService.millisToHoursAndMinsFormat(totalGrand),
       totalDays: this.timeService.daysBetween(since, until),
-      grandPercentage: this.percentage(totalGrand / this.timeService.toMillis(totalDays)),
-      grandHoursPerDay: this.timeService.millisToHoursAndMinsFormat(totalGrand)
+      grandPercentage: `${this.percentage(totalGrand / this.timeService.toMillis(totalDays))}%`,
+      grandHoursPerDay: this.timeService.millisToHoursAndMinsFormat(totalGrand / totalDays)
     }
   }
 
   percentage(number) {
-    return `${(number * 100).toFixed(2)}%`
+    return (number * 100).toFixed(2)
   }
 }
