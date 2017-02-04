@@ -10,7 +10,7 @@ export class Report {
       totalGrand: this.timeService.millisToHoursAndMinsFormat(totalGrand),
       totalDays: this.timeService.daysBetween(since, until),
       grandPercentage: this.percentage(totalGrand / this.timeService.toMillis(totalDays)),
-      grandHoursPerDay: '23h 0min'
+      grandHoursPerDay: this.timeService.millisToHoursAndMinsFormat(totalGrand)
     }
   }
 

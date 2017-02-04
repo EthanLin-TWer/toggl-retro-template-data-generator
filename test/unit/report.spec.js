@@ -51,11 +51,11 @@ describe('report.js', () => {
       report = new Report(timeService)
 
       let summary = report.getSummaryData(1000 * 60, '2016-01-01', '2016-01-01')
-      
+
       expect(daysBetween.calledWith('2016-01-01', '2016-01-01')).to.be.true
       expect(millisToHoursAndMins.calledWith(1000 * 60)).to.be.true
       expect(toMillis.calledWith(1)).to.be.true
-      
+
       expect(summary.totalGrand).to.equal('0h 1min')
       expect(summary.totalDays).to.equal(1)
       expect(summary.grandPercentage).to.equal('0.07%')
@@ -83,7 +83,7 @@ describe('report.js', () => {
         let summary = report.getSummaryData(23.5 * 60 * 60 * 1000, feb1st, feb1st)
         expect(summary.grandPercentage).to.equal('97.92%')
       })
-      
+
       it('should return 26.04% when total grand is 6.25h in one day', () => {
         let summary = report.getSummaryData(6.25 * 60 * 60 * 1000, feb1st, feb1st)
         expect(summary.grandPercentage).to.equal('26.04%')
@@ -94,11 +94,16 @@ describe('report.js', () => {
         expect(summary.grandPercentage).to.equal('0.00%')
       })
     })
-    
+
     describe('.grandHoursPerDay field', () => {
       it('should return 23h 0min when total grand is 23h in one day', () => {
         let summary = report.getSummaryData(23 * 60 * 60 * 1000, feb1st, feb1st)
         expect(summary.grandHoursPerDay).to.equal('23h 0min')
+      })
+
+      it('should return 22h 0min when total grand is 22h in one day', () => {
+        let summary = report.getSummaryData(22 * 60 * 60 * 1000, feb1st, feb1st)
+        expect(summary.grandHoursPerDay).to.equal('22h 0min')
       })
     })
   })
