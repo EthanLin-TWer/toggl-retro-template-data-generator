@@ -82,6 +82,11 @@ describe('report.js', () => {
         let summary = report.getSummaryData(23.5 * 60 * 60 * 1000, '2017-01-01', '2017-01-01')
         expect(summary.grandPercentage).to.equal('97.92%')
       })
+      
+      it('should return 26.04% when total grand is 6.25h in one day', () => {
+        let summary = report.getSummaryData(6.25 * 60 * 60 * 1000, '2017-01-01', '2017-01-01')
+        expect(summary.grandPercentage).to.equal('26.04%')
+      })
 
       it('should return 0.00% when total grand is 0 millis', () => {
         let summary = report.getSummaryData(0, '2017-01-01', '2017-01-01')
