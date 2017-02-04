@@ -26,6 +26,10 @@ describe('time service', () => {
     it('should return 60000 millis for 1 minute(1/1440 day)', () => {
       expect(timeService.toMillis(1 / 24 / 60)).to.equal(60000)
     })
+    
+    it('should return 1000 millis for 1 second(1/24/60/60 day)', () => {
+      expect(timeService.toMillis(1 / 24 / 60 / 60)).to.equal(1000)
+    })
   })
 
   describe('daysBetween(start, end)', () => {
