@@ -47,7 +47,7 @@ describe('report.js', () => {
       let timeService = new TimeService()
       let daysBetween = sinon.spy(timeService, 'daysBetween')
       let millisToHoursAndMins = sinon.spy(timeService, 'millisToHoursAndMinsFormat')
-      let toMillis = sinon.spy(timeService, 'toMillis');
+      let toMillis = sinon.spy(timeService, 'toMillis')
       report = new Report(timeService)
 
       let summary = report.getSummaryData(1000 * 60, '2016-01-01', '2016-01-01')

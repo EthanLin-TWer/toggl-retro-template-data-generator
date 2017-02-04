@@ -6,10 +6,11 @@ export class Report {
 
   getSummaryData(totalGrand, since, until) {
     let totalDays = this.timeService.daysBetween(since, until)
+    let grandPercentage = this.percentage(totalGrand / this.timeService.toMillis(totalDays));
     return {
       totalGrand: this.timeService.millisToHoursAndMinsFormat(totalGrand),
       totalDays: this.timeService.daysBetween(since, until),
-      grandPercentage: `${this.percentage(totalGrand / this.timeService.toMillis(totalDays))}%`,
+      grandPercentage: `${grandPercentage}%`,
       grandHoursPerDay: this.timeService.millisToHoursAndMinsFormat(totalGrand / totalDays)
     }
   }
