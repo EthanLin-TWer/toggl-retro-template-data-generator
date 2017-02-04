@@ -5,7 +5,7 @@ import { Report, TimeService } from '../../src'
 
 describe('report.js', () => {
   let report
-  let jan1st = '2017-01-01'
+  let feb1st = '2017-02-01'
   let since = '2017-01-14', until = '2017-01-26'
   let reportResponse
 
@@ -63,41 +63,41 @@ describe('report.js', () => {
 
     describe('.grandPercentage field', () => {
       it('should return 50.00% when total grand is 12h in one day', () => {
-        let summary = report.getSummaryData(12 * 60 * 60 * 1000, jan1st, jan1st)
+        let summary = report.getSummaryData(12 * 60 * 60 * 1000, feb1st, feb1st)
         expect(summary.totalGrand).to.equal('12h 0min')
         expect(summary.totalDays).to.equal(1)
         expect(summary.grandPercentage).to.equal('50.00%')
       })
 
       it('should return 100.00% when total grand is 24h in one day', () => {
-        let summary = report.getSummaryData(24 * 60 * 60 * 1000, jan1st, jan1st)
+        let summary = report.getSummaryData(24 * 60 * 60 * 1000, feb1st, feb1st)
         expect(summary.grandPercentage).to.equal('100.00%')
       })
 
       it('should return 83.33% when total grand is 20h in one day', () => {
-        let summary = report.getSummaryData(20 * 60 * 60 * 1000, jan1st, jan1st)
+        let summary = report.getSummaryData(20 * 60 * 60 * 1000, feb1st, feb1st)
         expect(summary.grandPercentage).to.equal('83.33%')
       })
 
       it('should return 97.92% when total grand is 23.5h in one day', () => {
-        let summary = report.getSummaryData(23.5 * 60 * 60 * 1000, jan1st, jan1st)
+        let summary = report.getSummaryData(23.5 * 60 * 60 * 1000, feb1st, feb1st)
         expect(summary.grandPercentage).to.equal('97.92%')
       })
       
       it('should return 26.04% when total grand is 6.25h in one day', () => {
-        let summary = report.getSummaryData(6.25 * 60 * 60 * 1000, jan1st, jan1st)
+        let summary = report.getSummaryData(6.25 * 60 * 60 * 1000, feb1st, feb1st)
         expect(summary.grandPercentage).to.equal('26.04%')
       })
 
       it('should return 0.00% when total grand is 0 millis', () => {
-        let summary = report.getSummaryData(0, jan1st, jan1st)
+        let summary = report.getSummaryData(0, feb1st, feb1st)
         expect(summary.grandPercentage).to.equal('0.00%')
       })
     })
     
     describe('.grandHoursPerDay field', () => {
       it('should return 23h 0min when total grand is 23h in one day', () => {
-        let summary = report.getSummaryData(23 * 60 * 60 * 1000, jan1st, jan1st)
+        let summary = report.getSummaryData(23 * 60 * 60 * 1000, feb1st, feb1st)
         expect(summary.grandHoursPerDay).to.equal('23h 0min')
       })
     })
