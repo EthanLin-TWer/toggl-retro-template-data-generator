@@ -22,21 +22,12 @@ export class TimeService {
     if (end.trim().length === 0) throw new Error('end date cannot be empty')
     if (!this.yyyymmddReg.test(start)) throw new Error('start date should be in yyyy-mm-dd format')
     if (!this.yyyymmddReg.test(end)) throw new Error('end date should be in yyyy-mm-dd format')
-    if (this.totalMillis(start, end) < this.millisOfOneDay()) throw new Error('start date can\'t be later than end date')
-
-    return this.totalMillis(start, end) / this.millisOfOneDay()
+    if (this.totalMillis(start, end) < this.MILLIS_OF_ONE_DAY) throw new Error('start date can\'t be later than end date')
+    
+    return this.totalMillis(start, end) / this.MILLIS_OF_ONE_DAY
   }
   
   totalMillis(start, end) {
-    return new Date(end) - new Date(start) + this.millisOfOneDay()
-  }
-  
-  millisToDay(millis) {
-    //             seconds mins hours day
-    return millis / this.MILLIS_OF_ONE_DAY
-  }
-
-  millisOfOneDay() {
-    return this.MILLIS_OF_ONE_DAY
+    return new Date(end) - new Date(start) + this.MILLIS_OF_ONE_DAY
   }
 }
