@@ -4,6 +4,12 @@ export class Report {
     this.timeService = timeService
   }
 
+  getClientData(reports, since, until) {
+    return reports.map(report => {
+      
+    })  
+  }
+  
   getSummaryData(totalGrand, since, until) {
     let totalDays = this.timeService.daysBetween(since, until)
     let grandPercentage = this.percentage(totalGrand / this.timeService.toMillis(totalDays));

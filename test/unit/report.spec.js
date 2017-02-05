@@ -9,7 +9,7 @@ describe('report.js', () => {
   let since = '2017-01-14', until = '2017-01-26'
   let response
   
-  beforeEach(() => {
+  beforeEach('', () => {
     report = new Report(new TimeService())
     response = mockReportResponse()
   })
@@ -90,6 +90,13 @@ describe('report.js', () => {
     })
   })
 
+  describe('getClientData(reports, since, until)', () => {
+    it('should get three clients', () => {
+      let client = report.getClientData(response, since, until)
+      expect(client.length).to.equal(3)
+    })  
+  })
+  
   describe('real data testing', () => {
     it('should get correct summary data when method getSummaryData() is called', () => {
       let summary = report.getSummaryData(1006076304, since, until)
@@ -113,7 +120,7 @@ describe('report.js', () => {
         percentage: '4.94%', hoursPerDay: '1h 12min'
       })
       expect(client[2]).to.deep.equal({
-        client: 'basiclife', time: '135h 10min',
+        client: 'basic-life', time: '135h 10min',
         percentage: '46.93%', hoursPerDay: '11h 16min'
       })
     })
@@ -163,7 +170,7 @@ describe('report.js', () => {
         ]
       },
       {
-        id: 19673693, title: { client: 'basiclife' }, time: 486582000,
+        id: 19673693, title: { client: 'basic-life' }, time: 486582000,
         items: [
           { title: { project: 'eating' }, time: 44589000 },
           { title: { project: 'sleeping' }, time: 249265000 },
