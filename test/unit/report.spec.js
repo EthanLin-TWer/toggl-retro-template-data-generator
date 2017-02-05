@@ -8,35 +8,7 @@ describe('report.js', () => {
   let feb1st = '2017-02-01'
   let since = '2017-01-14', until = '2017-01-26'
   let response
-
-  let mockReportResponse = () => {
-    return [
-      {
-        id: 19673694, title: { client: 'work' }, time: 142375304,
-        items: [
-          { title: { project: 'regular-meetings' }, time: 18327000 },
-          { title: { project: 'workshops' }, time: 9750000 }
-        ]
-      },
-      {
-        id: 19673695, title: { client: 'tech-programming' }, time: 51178000,
-        items: [
-          { title: { project: 'peak-development' }, time: 38312000 },
-          { title: { project: 'project-refactor' }, time: 11571000 }
-        ]
-      },
-      {
-        id: 19673693, title: { client: 'basiclife' }, time: 486582000,
-        items: [
-          { title: { project: 'eating' }, time: 44589000 },
-          { title: { project: 'sleeping' }, time: 249265000 },
-          { title: { project: 'shower' }, time: 18523000 }
-        ]
-      }
-
-    ]
-  }
-
+  
   beforeEach(() => {
     report = new Report(new TimeService())
     response = mockReportResponse()
@@ -173,4 +145,33 @@ describe('report.js', () => {
     })
 
   })
+  
+  let mockReportResponse = () => {
+    return [
+      {
+        id: 19673694, title: { client: 'work' }, time: 142375304,
+        items: [
+          { title: { project: 'regular-meetings' }, time: 18327000 },
+          { title: { project: 'workshops' }, time: 9750000 }
+        ]
+      },
+      {
+        id: 19673695, title: { client: 'tech-programming' }, time: 51178000,
+        items: [
+          { title: { project: 'peak-development' }, time: 38312000 },
+          { title: { project: 'project-refactor' }, time: 11571000 }
+        ]
+      },
+      {
+        id: 19673693, title: { client: 'basiclife' }, time: 486582000,
+        items: [
+          { title: { project: 'eating' }, time: 44589000 },
+          { title: { project: 'sleeping' }, time: 249265000 },
+          { title: { project: 'shower' }, time: 18523000 }
+        ]
+      }
+
+    ]
+  }
+
 })
