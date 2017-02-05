@@ -95,6 +95,12 @@ describe('report.js', () => {
       let client = report.getClientData(response, since, until)
       expect(client.length).to.equal(3)
     })  
+    
+    it('should get client title', () => {
+      let client = report.getClientData(response, since, until)
+      expect(client.map(each => each.client))
+        .to.eql(['work', 'tech-programming', 'basic-life'])
+    })
   })
   
   describe('real data testing', () => {
