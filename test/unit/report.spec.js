@@ -101,6 +101,12 @@ describe('report.js', () => {
       expect(client.map(each => each.client))
         .to.eql(['work', 'tech-programming', 'basic-life'])
     })
+    
+    it('should get total spent time', () => {
+      let client = report.getClientData(response, since, until)
+      expect(client.map(each => each.time))
+        .to.eql(['39h 32min', '14h 12min', '135h 9min'])
+    })
   })
   
   describe('real data testing', () => {

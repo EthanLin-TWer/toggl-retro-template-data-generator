@@ -7,7 +7,8 @@ export class Report {
   getClientData(reports, since, until) {
     return reports.map(report => {
       return {
-        client: report.title.client
+        client: report.title.client,
+        time: this.timeService.millisToHoursAndMinsFormat(report.time)
       }
     })  
   }
