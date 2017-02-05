@@ -6,9 +6,11 @@ export class Report {
 
   getClientData(reports, since, until) {
     return reports.map(report => {
+      let percentage = `${this.percentage(report.time / (new Date(until) - new Date(since) + 86400000))}%`
       return {
         client: report.title.client,
-        time: this.timeService.millisToHoursAndMinsFormat(report.time)
+        time: this.timeService.millisToHoursAndMinsFormat(report.time),
+        percentage: percentage 
       }
     })  
   }

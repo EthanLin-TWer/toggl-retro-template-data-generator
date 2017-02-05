@@ -107,6 +107,12 @@ describe('report.js', () => {
       expect(client.map(each => each.time))
         .to.eql(['39h 32min', '14h 12min', '135h 9min'])
     })
+    
+    it('should get percentage of time spent time during period', () => {
+      let client = report.getClientData(response, since, until)
+      expect(client.map(each => each.percentage))
+        .to.eql(['12.68%', '4.56%', '43.32%'])
+    })
   })
   
   describe('real data testing', () => {
