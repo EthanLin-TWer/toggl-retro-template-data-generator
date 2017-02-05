@@ -14,7 +14,7 @@ describe('report.js', () => {
     response = mockReportResponse()
   })
 
-  describe('getSummaryData()', () => {
+  describe('getSummaryData(total_grand, since, until)', () => {
     it('should call time service to calculate summary data', () => {
       let timeService = new TimeService()
       let daysBetween = sinon.spy(timeService, 'daysBetween')
@@ -33,6 +33,15 @@ describe('report.js', () => {
       expect(summary.grandPercentage).to.equal('0.07%')
     })
 
+    it('should get correct summary data, integration-unit test', () => {
+      let summary = report.getSummaryData(1006076304, since, until)
+
+      expect(summary.totalGrand).to.equal('279h 27min')
+      expect(summary.totalDays).to.equal(13)
+      expect(summary.grandPercentage).to.equal('89.57%')
+      expect(summary.grandHoursPerDay).to.equal('21h 29min')
+    })
+    
     describe('.grandPercentage field', () => {
       it('should return 50.00% when total grand is 12h in one day', () => {
         let summary = report.getSummaryData(12 * 60 * 60 * 1000, feb1st, feb1st)
@@ -116,36 +125,29 @@ describe('report.js', () => {
       let clients = report.getClientData(response, since, until).map(each => each.hoursPerDay)
       expect(clients).to.eql(['3h 2min', '1h 5min', '10h 23min'])
     })
-  })
-  
-  describe('real data testing', () => {
-    it('should get correct summary data when method getSummaryData() is called', () => {
-      let summary = report.getSummaryData(1006076304, since, until)
 
-      expect(summary.totalGrand).to.equal('279h 27min')
-      expect(summary.totalDays).to.equal(13)
-      expect(summary.grandPercentage).to.equal('89.57%')
-      expect(summary.grandHoursPerDay).to.equal('21h 29min')
-    })
-
-    it.skip('should get correct client data when method getClientsData() is called', () => {
-      let client = report.getClientData(response, since, until);
+    it('should get correct client data, integrational unit test', () => {
+      let client = report.getClientData(response, since, until)
 
       expect(client.length).to.equal(3)
       expect(client[0]).to.deep.equal({
-        client: 'work', time: '39h 33min',
-        percentage: '13.73%', hoursPerDay: '3h 18min'
+        client: 'work', time: '39h 32min',
+        percentage: '12.68%', hoursPerDay: '3h 2min'
       })
       expect(client[1]).to.deep.equal({
-        client: 'tech-programming', time: '14h 13min',
-        percentage: '4.94%', hoursPerDay: '1h 12min'
+        client: 'tech-programming', time: '14h 12min',
+        percentage: '4.56%', hoursPerDay: '1h 5min'
       })
       expect(client[2]).to.deep.equal({
-        client: 'basic-life', time: '135h 10min',
-        percentage: '46.93%', hoursPerDay: '11h 16min'
+        client: 'basic-life', time: '135h 9min',
+        percentage: '43.32%', hoursPerDay: '10h 23min'
       })
     })
 
+  })
+  
+  describe('real data testing', () => {
+    
     it.skip('should get correct projects data when method getProjectsData() is called', () => {
       let projects = report.getProjectsData(response, since, until);
 
