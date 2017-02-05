@@ -6,11 +6,13 @@ export class Report {
 
   getClientData(reports, since, until) {
     return reports.map(report => {
+      let percentage = report.time / this.timeService.totalMillis(since, until)
+      let millisPerDay = report.time / this.timeService.daysBetween(since, until)
       return {
         client: report.title.client,
         time: this.timeService.millisToHoursAndMinsFormat(report.time),
-        percentage: `${this.percentage(report.time / this.timeService.totalMillis(since, until))}%`,
-        hoursPerDay: this.timeService.millisToHoursAndMinsFormat(report.time / this.timeService.daysBetween(since, until))
+        percentage: `${this.percentage(percentage)}%`,
+        hoursPerDay: this.timeService.millisToHoursAndMinsFormat(millisPerDay)
       }
     })  
   }
