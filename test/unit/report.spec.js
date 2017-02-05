@@ -7,7 +7,7 @@ describe('report.js', () => {
   let report
   let feb1st = '2017-02-01'
   let since = '2017-01-14', until = '2017-01-26'
-  let reportResponse
+  let response
 
   let mockReportResponse = () => {
     return [
@@ -39,7 +39,7 @@ describe('report.js', () => {
 
   beforeEach(() => {
     report = new Report(new TimeService())
-    reportResponse = mockReportResponse()
+    response = mockReportResponse()
   })
 
   describe('getSummaryData()', () => {
@@ -129,7 +129,7 @@ describe('report.js', () => {
     })
 
     it.skip('should get correct client data when method getClientsData() is called', () => {
-      let client = report.getClientData(reportResponse, since, until);
+      let client = report.getClientData(response, since, until);
 
       expect(client.length).to.equal(3)
       expect(client[0]).to.deep.equal({
@@ -147,7 +147,7 @@ describe('report.js', () => {
     })
 
     it.skip('should get correct projects data when method getProjectsData() is called', () => {
-      let projects = report.getProjectsData(reportResponse, since, until);
+      let projects = report.getProjectsData(response, since, until);
 
       expect(projects.length).to.equal(3)
       expect(projects[0]).to.deep.equal({
