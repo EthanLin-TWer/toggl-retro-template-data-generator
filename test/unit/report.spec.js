@@ -97,21 +97,24 @@ describe('report.js', () => {
     })  
     
     it('should get client title', () => {
-      let client = report.getClientData(response, since, until)
-      expect(client.map(each => each.client))
-        .to.eql(['work', 'tech-programming', 'basic-life'])
+      let clients = report.getClientData(response, since, until)
+        .map(each => each.client)
+      expect(clients).to.eql(['work', 'tech-programming', 'basic-life'])
     })
     
     it('should get total spent time', () => {
-      let client = report.getClientData(response, since, until)
-      expect(client.map(each => each.time))
-        .to.eql(['39h 32min', '14h 12min', '135h 9min'])
+      let clients = report.getClientData(response, since, until).map(each => each.time)
+      expect(clients).to.eql(['39h 32min', '14h 12min', '135h 9min'])
     })
     
     it('should get percentage of time spent time during period', () => {
-      let client = report.getClientData(response, since, until)
-      expect(client.map(each => each.percentage))
-        .to.eql(['12.68%', '4.56%', '43.32%'])
+      let clients = report.getClientData(response, since, until).map(each => each.percentage)
+      expect(clients).to.eql(['12.68%', '4.56%', '43.32%'])
+    })
+    
+    it('should get hours per day spent during period', () => {
+      let clients = report.getClientData(response, since, until).map(each => each.hoursPerDay)
+      expect(clients).to.eql(['3h 2min', '1h 5min', '10h 23min'])
     })
   })
   
