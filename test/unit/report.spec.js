@@ -1,4 +1,4 @@
-import { describe, beforeEach, it } from "mocha"
+import { describe, beforeEach, before, it } from "mocha"
 import { expect } from 'chai'
 import sinon from 'sinon'
 import { Report, TimeService } from '../../src'
@@ -100,35 +100,37 @@ describe('report.js', () => {
   })
 
   describe('getClientData(reports, since, until)', () => {
+    let client 
+    
+    before('', () => {
+      client = report.getClientData(response, since, until)
+    })
+    
     it('should get three clients', () => {
-      let client = report.getClientData(response, since, until)
       expect(client.length).to.equal(3)
     })  
     
     it('should get client title', () => {
-      let clients = report.getClientData(response, since, until)
-        .map(each => each.client)
+      let clients = client.map(each => each.client)
       expect(clients).to.eql(['work', 'tech-programming', 'basic-life'])
     })
     
     it('should get total spent time', () => {
-      let clients = report.getClientData(response, since, until).map(each => each.time)
-      expect(clients).to.eql(['39h 32min', '14h 12min', '135h 9min'])
+      let clientsTime = client.map(each => each.time)
+      expect(clientsTime).to.eql(['39h 32min', '14h 12min', '135h 9min'])
     })
     
     it('should get percentage of time spent time during period', () => {
-      let clients = report.getClientData(response, since, until).map(each => each.percentage)
-      expect(clients).to.eql(['12.68%', '4.56%', '43.32%'])
+      let spentTimePercentage = client.map(each => each.percentage)
+      expect(spentTimePercentage).to.eql(['12.68%', '4.56%', '43.32%'])
     })
     
     it('should get hours per day spent during period', () => {
-      let clients = report.getClientData(response, since, until).map(each => each.hoursPerDay)
-      expect(clients).to.eql(['3h 2min', '1h 5min', '10h 23min'])
+      let hoursPerDay = client.map(each => each.hoursPerDay)
+      expect(hoursPerDay).to.eql(['3h 2min', '1h 5min', '10h 23min'])
     })
 
     it('should get correct client data, integrational unit test', () => {
-      let client = report.getClientData(response, since, until)
-
       expect(client.length).to.equal(3)
       expect(client[0]).to.deep.equal({
         client: 'work', time: '39h 32min',
