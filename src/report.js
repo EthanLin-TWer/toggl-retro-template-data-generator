@@ -9,7 +9,11 @@ export class Report {
       return {
         client: client.title.client,
         time: this.timeService.millisToHoursAndMinsFormat(client.time),
-        projects: client.items
+        projects: client.items.map(project => {
+          return {
+            project: project.title.project
+          }
+        })
       }
     })
   }

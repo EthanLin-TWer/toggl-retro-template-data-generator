@@ -8,7 +8,7 @@ describe('report.js', () => {
   let feb1st = '2017-02-01'
   let since = '2017-01-14', until = '2017-01-26'
   let response
-  
+
   beforeEach('', () => {
     report = new Report(new TimeService())
     response = mockReportResponse()
@@ -41,7 +41,7 @@ describe('report.js', () => {
       expect(summary.grandPercentage).to.equal('89.57%')
       expect(summary.grandHoursPerDay).to.equal('21h 29min')
     })
-    
+
     describe('.grandPercentage field', () => {
       it('should return 50.00% when total grand is 12h in one day', () => {
         let summary = report.getSummaryData(12 * 60 * 60 * 1000, feb1st, feb1st)
@@ -91,7 +91,7 @@ describe('report.js', () => {
         let summary = report.getSummaryData(27.34 * 60 * 60 * 1000, feb1st, '2017-02-04')
         expect(summary.grandHoursPerDay).to.equal('6h 50min')
       })
-      
+
       it('should return 0h 28min when total grand is 6.2h in 13 days', () => {
         let summary = report.getSummaryData(6.2 * 60 * 60 * 1000, since, until)
         expect(summary.grandHoursPerDay).to.equal('0h 28min')
@@ -100,31 +100,31 @@ describe('report.js', () => {
   })
 
   describe('getClientData(reports, since, until)', () => {
-    let client 
-    
+    let client
+
     before('', () => {
       client = report.getClientData(response, since, until)
     })
-    
+
     it('should get three clients', () => {
       expect(client.length).to.equal(3)
-    })  
-    
+    })
+
     it('should get client title', () => {
       let clients = client.map(each => each.client)
       expect(clients).to.eql(['work', 'tech-programming', 'basic-life'])
     })
-    
+
     it('should get total spent time', () => {
       let clientsTime = client.map(each => each.time)
       expect(clientsTime).to.eql(['39h 32min', '14h 12min', '135h 9min'])
     })
-    
+
     it('should get percentage of time spent time during period', () => {
       let spentTimePercentage = client.map(each => each.percentage)
       expect(spentTimePercentage).to.eql(['12.68%', '4.56%', '43.32%'])
     })
-    
+
     it('should get hours per day spent during period', () => {
       let hoursPerDay = client.map(each => each.hoursPerDay)
       expect(hoursPerDay).to.eql(['3h 2min', '1h 5min', '10h 23min'])
@@ -147,24 +147,24 @@ describe('report.js', () => {
     })
 
   })
-  
+
   describe('getProjectsData(reports, since, until)', () => {
     let clients
-    
+
     before('', () => {
-      clients = report.getProjectsData(response, since, until);  
+      clients = report.getProjectsData(response, since, until);
     })
-    
+
     it('should get 3 clients', () => {
       expect(clients.length).to.equal(3)
     })
-    
+
     it('should get correct number of associated projects', () => {
       let projects = clients.map(client => client.projects).map(s => s.length)
-      
+
       expect(projects).to.eql([2, 2, 3])
     })
-    
+
     it('should get information of each client', () => {
       let clientNames = clients.map(project => project.client)
       let clientsTime = clients.map(project => project.time)
@@ -172,16 +172,26 @@ describe('report.js', () => {
       expect(clientNames).to.eql(['work', 'tech-programming', 'basic-life'])
       expect(clientsTime).to.eql(['39h 32min', '14h 12min', '135h 9min'])
     })
-  
-    describe('should get correct projects information', () => {
-      it('should get correct projects name', () => {
+
+    it('should get correct project names', () => {
+      let projects = clients.map(client => client.projects)
         
-      })
+      console.log(projects)
+      expect(projects[0].map(each => each.project)).to.eql([
+        'regular-meetings', 'workshops'
+      ])
+      expect(projects[1].map(each => each.project)).to.eql([
+        'peak-development', 'project-refactor'
+      ])
+      expect(projects[2].map(each => each.project)).to.eql([
+        'eating', 'sleeping', 'shower'
+      ])
     })
+
   })
-  
+
   describe('real data testing', () => {
-    
+
     it.skip('should get correct projects data when method getProjectsData() is called', () => {
       let projects = report.getProjectsData(response, since, until);
 
@@ -208,7 +218,7 @@ describe('report.js', () => {
     })
 
   })
-  
+
   let mockReportResponse = () => {
     return [
       {
