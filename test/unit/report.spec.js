@@ -163,6 +163,12 @@ describe('report.js', () => {
       expect(clients).to.eql(['work', 'tech-programming', 'basic-life'])
       expect(clientTime).to.eql(['39h 32min', '14h 12min', '135h 9min'])
     })
+  
+    describe('should get correct projects information', () => {
+      it('should get correct projects name', () => {
+        
+      })
+    })
   })
   
   describe('real data testing', () => {
@@ -170,7 +176,6 @@ describe('report.js', () => {
     it.skip('should get correct projects data when method getProjectsData() is called', () => {
       let projects = report.getProjectsData(response, since, until);
 
-      expect(projects.length).to.equal(3)
       expect(projects[0]).to.deep.equal({
         client: 'work', time: '39h 33min',
         projects: [{
