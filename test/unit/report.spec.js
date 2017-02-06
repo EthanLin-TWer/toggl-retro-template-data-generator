@@ -150,8 +150,18 @@ describe('report.js', () => {
     it('should get three clients with several associated projects', () => {
       let projects = report.getProjectsData(response, since, until)
       let subProjects = projects.map(project => project.projects).map(s => s.length)
+      
       expect(projects.length).to.equal(3)
       expect(subProjects).to.eql([2, 2, 3])
+    })
+    
+    it('should get information of each client', () => {
+      let projects = report.getProjectsData(response, since, until)
+      let clients = projects.map(project => project.client)
+      let clientTime = projects.map(project => project.time)
+      
+      expect(clients).to.eql(['work', 'tech-programming', 'basic-life'])
+      expect(clientTime).to.eql(['39h 32min', '14h 12min', '135h 9min'])
     })
   })
   
