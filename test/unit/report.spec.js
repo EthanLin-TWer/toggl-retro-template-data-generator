@@ -146,6 +146,15 @@ describe('report.js', () => {
 
   })
   
+  describe('getProjectsData(reports, since, until)', () => {
+    it('should get three clients with several associated projects', () => {
+      let projects = report.getProjectsData(response, since, until)
+      let subProjects = projects.map(project => project.projects).map(s => s.length)
+      expect(projects.length).to.equal(3)
+      expect(subProjects).to.eql([2, 2, 3])
+    })
+  })
+  
   describe('real data testing', () => {
     
     it.skip('should get correct projects data when method getProjectsData() is called', () => {

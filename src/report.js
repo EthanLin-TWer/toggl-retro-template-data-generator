@@ -4,6 +4,14 @@ export class Report {
     this.timeService = timeService
   }
 
+  getProjectsData(reports, since, until) {
+    return reports.map(client => {
+      return {
+        projects: client.items
+      }
+    })
+  }
+  
   getClientData(reports, since, until) {
     return reports.map(report => {
       let percentage = report.time / this.timeService.totalMillis(since, until)
