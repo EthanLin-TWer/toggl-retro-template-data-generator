@@ -198,6 +198,29 @@ describe('report.js', () => {
       expect(projects[2].map(each => each.time)).to.eql(expected[2])
     })
 
+    it('should get hoursPerDay and percentage data of each projects', () => {
+      let projects = clients.map(client => client.projects)
+      
+      let hoursPerDay = [
+        ['0h 23min', '0h 12min'],
+        ['0h 49min', '0h 14min'],
+        ['0h 57min', '5h 19min', '0h 23min']
+      ]
+      let timePercentages = [
+        ['', ''],
+        ['', ''],
+        ['', '', '']
+      ]
+
+      expect(projects[0].map(each => each.hoursPerDay)).to.eql(hoursPerDay[0])
+      expect(projects[0].map(each => each.percentage)).to.eql(timePercentages[0])
+      
+      expect(projects[1].map(each => each.hoursPerDay)).to.eql(hoursPerDay[1])
+      expect(projects[1].map(each => each.percentage)).to.eql(timePercentages[1])
+      
+      expect(projects[2].map(each => each.hoursPerDay)).to.eql(hoursPerDay[2])
+      expect(projects[2].map(each => each.percentage)).to.eql(timePercentages[2])
+    })
   })
 
   describe('real data testing', () => {

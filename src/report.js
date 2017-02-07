@@ -10,9 +10,12 @@ export class Report {
         client: client.title.client,
         time: this.timeService.millisToHoursAndMinsFormat(client.time),
         projects: client.items.map(project => {
+          let millisPerDay = project.time / this.timeService.daysBetween(since,until)
           return {
             project: project.title.project,
-            time: this.timeService.millisToHoursAndMinsFormat(project.time)
+            time: this.timeService.millisToHoursAndMinsFormat(project.time),
+            hoursPerDay: this.timeService.millisToHoursAndMinsFormat(millisPerDay), 
+            percentage: ''
           }
         })
       }
