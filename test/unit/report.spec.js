@@ -184,6 +184,19 @@ describe('report.js', () => {
       expect(projects[1].map(each => each.project)).to.eql(techProgrammingProjects)
       expect(projects[2].map(each => each.project)).to.eql(basicLifeProjects)
     })
+    
+    it('should get spent time of each projects', () => {
+      let projects = clients.map(client => client.projects)
+      let expected = [
+        ['5h 5min',   '2h 42min'],
+        ['10h 38min', '3h 12min'],
+        ['12h 23min', '69h 14min', '5h 8min']
+      ]
+      
+      expect(projects[0].map(each => each.time)).to.eql(expected[0])
+      expect(projects[1].map(each => each.time)).to.eql(expected[1])
+      expect(projects[2].map(each => each.time)).to.eql(expected[2])
+    })
 
   })
 

@@ -11,7 +11,8 @@ export class Report {
         time: this.timeService.millisToHoursAndMinsFormat(client.time),
         projects: client.items.map(project => {
           return {
-            project: project.title.project
+            project: project.title.project,
+            time: this.timeService.millisToHoursAndMinsFormat(project.time)
           }
         })
       }
