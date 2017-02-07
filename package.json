@@ -19,9 +19,9 @@
   "scripts": {
     "dev": "nodemon --exec babel-node ./retro.js",
     "test": "mocha test/unit/*.spec.js --require babel-register --timeout 10000",
-    "ci": "npm run test -- --apiToken=$apiToken",
+    "ci": "mocha test/**/*.spec.js --require babel-register --timeout 10000 --apiToken=$apiToken",
     "generate": "babel-node ./retro.js"
   },
-  "author": "",
+  "author": "Congyu Lin(Linesh)",
   "license": "MIT"
 }
