@@ -207,9 +207,9 @@ describe('report.js', () => {
         ['0h 57min', '5h 19min', '0h 23min']
       ]
       let timePercentages = [
-        ['', ''],
-        ['', ''],
-        ['', '', '']
+        ['12.87%', '6.85%'],
+        ['74.86%', '22.61%'],
+        ['9.16%' , '51.23%', '3.81%']
       ]
 
       expect(projects[0].map(each => each.hoursPerDay)).to.eql(hoursPerDay[0])
@@ -221,35 +221,6 @@ describe('report.js', () => {
       expect(projects[2].map(each => each.hoursPerDay)).to.eql(hoursPerDay[2])
       expect(projects[2].map(each => each.percentage)).to.eql(timePercentages[2])
     })
-  })
-
-  describe('real data testing', () => {
-
-    it.skip('should get correct projects data when method getProjectsData() is called', () => {
-      let projects = report.getProjectsData(response, since, until);
-
-      expect(projects[0]).to.deep.equal({
-        client: 'work', time: '39h 33min',
-        projects: [{
-          project: 'regular-meetings', time: '5h 6min',
-          hoursPerDay: '0h 26min', percentage: '12.87%'
-        }, {
-          project: 'workshops', time: '2h 43min',
-          hoursPerDay: '0h 14min', percentage: '6.85%'
-        }]
-      })
-      expect(projects[1]).to.deep.equal({
-        client: 'tech-programming', time: '14h 13min',
-        projects: [{
-          project: 'peak-development', time: '10h 39min',
-          hoursPerDay: '0h 54min', percentage: '74.86%'
-        }, {
-          project: 'project-refactor', time: '3h 13min',
-          hoursPerDay: '0h 17min', percentage: '22.61%'
-        }]
-      })
-    })
-
   })
 
   let mockReportResponse = () => {

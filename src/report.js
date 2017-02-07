@@ -15,7 +15,7 @@ export class Report {
             project: project.title.project,
             time: this.timeService.millisToHoursAndMinsFormat(project.time),
             hoursPerDay: this.timeService.millisToHoursAndMinsFormat(millisPerDay), 
-            percentage: ''
+            percentage: `${this.percentage(project.time / client.time)}%`
           }
         })
       }
