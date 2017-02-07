@@ -176,16 +176,13 @@ describe('report.js', () => {
     it('should get correct project names', () => {
       let projects = clients.map(client => client.projects)
         
-      console.log(projects)
-      expect(projects[0].map(each => each.project)).to.eql([
-        'regular-meetings', 'workshops'
-      ])
-      expect(projects[1].map(each => each.project)).to.eql([
-        'peak-development', 'project-refactor'
-      ])
-      expect(projects[2].map(each => each.project)).to.eql([
-        'eating', 'sleeping', 'shower'
-      ])
+      let workProjects = ['regular-meetings', 'workshops']
+      let techProgrammingProjects = ['peak-development', 'project-refactor']
+      let basicLifeProjects = ['eating', 'sleeping', 'shower']
+      
+      expect(projects[0].map(each => each.project)).to.eql(workProjects)
+      expect(projects[1].map(each => each.project)).to.eql(techProgrammingProjects)
+      expect(projects[2].map(each => each.project)).to.eql(basicLifeProjects)
     })
 
   })
