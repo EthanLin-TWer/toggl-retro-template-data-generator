@@ -13,15 +13,14 @@
     "chai": "^3.5.0",
     "minimist": "^1.2.0",
     "mocha": "^3.2.0",
-    "mochawesome": "^2.0.2",
     "mocha-better-spec-reporter": "^3.1.0",
     "nodemon": "^1.11.0",
     "sinon": "^1.17.7"
   },
   "scripts": {
     "dev": "nodemon --exec babel-node ./retro.js",
-    "test": "mocha test/unit/*.spec.js --require babel-register --timeout 10000 --reporter mochawesome",
-    "ci": "mocha test/**/*.spec.js --require babel-register --timeout 10000 --reporter mochawesome --apiToken=$apiToken",
+    "test": "mocha test/unit/*.spec.js --require babel-register --timeout 10000 --reporter mocha-better-spec-reporter",
+    "ci": "mocha test/**/*.spec.js --require babel-register --timeout 10000 --reporter mocha-better-spec-reporter --apiToken=$apiToken",
     "generate": "babel-node ./retro.js"
   },
   "author": "Congyu Lin(Linesh)",
