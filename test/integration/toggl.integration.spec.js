@@ -18,6 +18,7 @@ describe('Toggl API', () => {
       toggl = new TogglClient({ apiToken })
       toggl.summaryReport(options, (error, reports) => {
         responseReport = reports
+        console.log(`Response: \n${reports}`)
         done()
       })
     })

@@ -1,4 +1,4 @@
-# Toggl Retrospection Template Data Generator
+# Toggl Retrospection Template Data Generator [![][Badges: Travis CI]][Links: Travis CI]
 
 ## Development
 
@@ -189,3 +189,6 @@ Running `npm run generate` in project root, and you will see reports like below.
     percentage: 0.94126831122636,
     hoursPerDay: 1.6048842592592591 } ]
 ```
+
+[Badges: Travis CI]: https://travis-ci.org/linesh-simplicity/toggl-retro-template-data-generator.svg?branch=master
+[Links: Travis CI]: https://travis-ci.org/linesh-simplicity/toggl-retro-template-data-generator
