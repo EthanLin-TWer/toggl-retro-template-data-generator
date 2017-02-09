@@ -1,4 +1,4 @@
-import { describe, before, it } from "mocha"
+import { describe, before, after, it } from "mocha"
 import { expect } from 'chai'
 import argv from 'minimist'
 import TogglClient from 'toggl-api'
@@ -18,7 +18,6 @@ describe('Toggl API', () => {
       toggl = new TogglClient({ apiToken })
       toggl.summaryReport(options, (error, reports) => {
         responseReport = reports
-        console.log(`Response: \n${reports}`)
         done()
       })
     })
@@ -46,5 +45,10 @@ describe('Toggl API', () => {
         expect(project.time).to.be.a('number')
       })
     })
+
+    after('', () => {
+      console.log(`Response: \n${JSON.stringify(responseReport, null, '  ')}`)
+    })
+
   })
 })
