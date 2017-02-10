@@ -46,6 +46,9 @@ describe('Toggl API', () => {
       })
     })
 
+    it('', () => {
+      
+    })
     after('', () => {
       console.log(`Response: \n${JSON.stringify(responseReport, null, '  ')}`)
     })
