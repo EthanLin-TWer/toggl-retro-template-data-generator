@@ -4,8 +4,7 @@ import argv from 'minimist'
 import TogglClient from 'toggl-api'
 import Settings from '../../settings'
 
-describe('Toggl API', () => {
-  describe('toggl.summaryReport()', () => {
+describe('Toggl API: toggl.summaryReport', () => {
     let toggl, responseReport
     before((done) => {
       let apiToken = Settings.token || argv(process.argv.slice(2)).apiToken
@@ -46,7 +45,7 @@ describe('Toggl API', () => {
       })
     })
 
-    it('verify data logical correctness', () => {
+    it('validate data logical correctness', () => {
       
     })
     
@@ -54,5 +53,4 @@ describe('Toggl API', () => {
       console.log(`Response: \n${JSON.stringify(responseReport, null, '  ')}`)
     })
 
-  })
 })
