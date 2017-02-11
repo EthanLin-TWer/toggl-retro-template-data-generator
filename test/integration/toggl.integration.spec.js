@@ -38,7 +38,7 @@ describe('Toggl API', () => {
 
     it('for each project in response.data[x].items should have project name and project total time grands', () => {
       let clientProjects = responseReport.data.map(client => client.items)
-      let projects = [].concat.apply([], clientProjects)
+      let projects = [].concat.apply([], clientProjects) // black magic, flats a two dimension array
 
       projects.forEach(project => {
         expect(project.title.project).to.be.a('string')
@@ -46,9 +46,10 @@ describe('Toggl API', () => {
       })
     })
 
-    it('', () => {
+    it('verify data logical correctness', () => {
       
     })
+    
     after('', () => {
       console.log(`Response: \n${JSON.stringify(responseReport, null, '  ')}`)
     })
