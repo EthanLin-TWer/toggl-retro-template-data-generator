@@ -68,7 +68,7 @@ describe('Toggl API: toggl.summaryReport(options, callback(err, reports))', () =
     })
   })
   
-  afterEach('log response report on failed case', () => {
+  afterEach('log response report on failed case', function() {
     console.log(this)
 
     if (this.currentTest.state === 'failed') {
