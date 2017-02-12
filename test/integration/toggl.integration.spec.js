@@ -49,7 +49,7 @@ describe('Toggl API: toggl.summaryReport(options, callback(err, reports))', () =
   })
   
   describe('logic testing: data should meet business logic for use', () => {
-    it('validate data logical correctness', () => {
+    it('sum of each client time should equal to the returned total grands', () => {
       let totalGrand = responseReport.total_grand
       let totalClientTime = responseReport.data.map(client => client.time)
         .reduce((sum, time) => sum + time, 0)
@@ -57,6 +57,15 @@ describe('Toggl API: toggl.summaryReport(options, callback(err, reports))', () =
       expect(totalClientTime).to.equal(totalGrand)
     })
     
+    it('sum of each project time should equal to their client time', () => {
+      let clients = responseReport.data
+      clients.forEach(client => {
+        let totalProjectTime = client.items.map(project => project.time)
+          .reduce((sum, each) => sum + each, 0)
+        
+        expect(totalProjectTime).to.equal(client.time)
+      })
+    })
   })
   
   after('', () => {
