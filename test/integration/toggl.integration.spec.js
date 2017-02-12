@@ -57,7 +57,7 @@ describe('Toggl API: toggl.summaryReport(options, callback(err, reports))', () =
       expect(totalClientTime).to.equal(totalGrand)
     })
     
-    it('sum of each project time should equal to their client time', () => {
+    it('sum of each project time should equal to their belonged client time', () => {
       let clients = responseReport.data
       clients.forEach(client => {
         let totalProjectTime = client.items.map(project => project.time)
@@ -68,8 +68,10 @@ describe('Toggl API: toggl.summaryReport(options, callback(err, reports))', () =
     })
   })
   
-  after('', () => {
-    console.log(`Response: \n${JSON.stringify(responseReport, null, '  ')}`)
+  afterEach('log response report data on failed cases', () => {
+    if (this.currentTest.state === 'failed') {
+      console.error(`Failed response: \n${JSON.stringify(responseReport, null, '  ')}`)
+    }
   })
 
 })
