@@ -63,12 +63,12 @@ describe('Toggl API: toggl.summaryReport(options, callback(err, reports))', () =
         let totalProjectTime = client.items.map(project => project.time)
           .reduce((sum, each) => sum + each, 0)
         
-        expect(totalProjectTime).to.equal(client.time * 2)
+        expect(totalProjectTime).to.equal(client.time)
       })
     })
   })
   
-  afterEach('log response report on failed test case', function() {
+  afterEach('log response report on failed case', function() {
     if (this.currentTest.state === 'failed') {
       console.error(`Failed response: \n${JSON.stringify(responseReport, null, '  ')}`)
     }
