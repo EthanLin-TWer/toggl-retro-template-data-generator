@@ -11,7 +11,7 @@ const until = argv.until || Settings.until
 
 let toggl = new TogglClient({ apiToken })
 let report = new Report(new TimeService())
-let template = new Template()
+let template = new Template(since, until)
 
 toggl.summaryReport({
   user_agent: "nodejs_client",

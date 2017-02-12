@@ -1,9 +1,7 @@
-import Settings from '../settings'
-
 export class Template {
-  constructor() {
-    this.since = Settings.since
-    this.until = Settings.until
+  constructor(since, until) {
+    this.since = since
+    this.until = until
   }
 
   generateMarkdown(summary, clients, projects) {
