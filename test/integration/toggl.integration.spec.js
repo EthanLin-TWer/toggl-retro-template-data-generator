@@ -27,7 +27,7 @@ describe('Toggl API: toggl.summaryReport(options, callback(err, reports))', () =
       expect(responseReport.data).to.be.an('array')
     })
 
-    it('for each client in response.data should have client id, client name, client total time grands and all project data as an \'items\' array', () => {
+    it('for each client in response.data should have client id, client name, client total time and all project data in an \'items\' array', () => {
       responseReport.data.forEach(client => {
         expect(client.id).to.be.a('number')
         expect(client.title.client).to.be.a('string')
