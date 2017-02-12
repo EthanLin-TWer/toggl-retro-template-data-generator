@@ -1,12 +1,13 @@
-import { describe, before, after, it } from "mocha"
+import { describe, before, afterEach, it } from 'mocha'
 import { expect } from 'chai'
 import argv from 'minimist'
 import TogglClient from 'toggl-api'
+//noinspection JSUnresolvedVariable
 import Settings from '../settings.spec'
 
 describe('Toggl API: toggl.summaryReport(options, callback(err, reports))', () => {
   let toggl, responseReport
-  before((done) => {
+  before('call toggl.summaryReport() api and prepare response data', (done) => {
     let apiToken = Settings.token || argv(process.argv.slice(2)).apiToken
     let options = {
       grouping: "clients", subgrouping: "projects",
