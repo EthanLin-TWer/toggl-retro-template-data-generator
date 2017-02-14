@@ -97,6 +97,17 @@ describe('report.js', () => {
         expect(summary.grandHoursPerDay).to.equal('0h 28min')
       })
     })
+    
+    describe('.weekdays field', () => {
+      it('should return 2 when date window is between monday and tuesday', () => {
+        let summary = report.getSummaryData(24 * 60 * 60 * 1000, '2017-02-13', '2017-02-14')
+        expect(summary.weekdays).to.equal(2)
+      })
+      
+      it('should return 0 when date window is between between Sat and Sun', () => {
+        
+      })
+    })
   })
 
   describe('getClientData(reports, since, until)', () => {
