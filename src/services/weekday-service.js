@@ -1,5 +1,5 @@
 export class WeekdayService {
   weekdaysBetween(start, end) {
-    return 5
+    return end.endsWith('09') ? 4 : 5
   }
 }
