@@ -1,5 +1,11 @@
+import moment from 'moment'
+import 'moment-weekday-calc'
+
 export class WeekdayService {
+  constructor() {
+  }
+
   weekdaysBetween(start, end) {
-    return end.endsWith('09') ? 4 : 5
+    return moment().weekdayCalc(start, end, [1, 2, 3, 4, 5])
   }
 }
