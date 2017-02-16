@@ -22,7 +22,7 @@
   "scripts": {
     "dev": "nodemon --exec babel-node ./retro.js",
     "test": "mocha test/unit/ --recursive --require babel-register --timeout 10000 --reporter mocha-better-spec-reporter",
-    "ci": "mocha test/**/*.spec.js --require babel-register --timeout 10000 --reporter mocha-better-spec-reporter --apiToken=$apiToken",
+    "ci": "mocha test/ --recursive --require babel-register --timeout 10000 --reporter mocha-better-spec-reporter --apiToken=$apiToken",
     "generate": "babel-node ./retro.js"
   },
   "author": "Congyu Lin(Linesh)",
