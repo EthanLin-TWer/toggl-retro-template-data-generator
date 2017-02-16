@@ -1,7 +1,7 @@
 import { describe, it } from 'mocha'
 import { expect } from 'chai'
 
-import { TimeService } from '../../src/services/time-service'
+import { TimeService } from '../../../src/services/time-service'
 
 describe('time service', () => {
   let timeService = new TimeService()
