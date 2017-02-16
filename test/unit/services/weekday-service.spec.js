@@ -4,7 +4,16 @@ import { expect } from 'chai'
 import { WeekdayService } from '../../../src/services/weekday-service'
 
 describe('weekday service', () => {
-  describe('getWeekdaysBetween(startDate, endDate)', () => {
-    
+  let weekdayService
+  
+  before('instantiate weekdayService', () => {
+    weekdayService = new WeekdayService()
+  })
+  
+  describe('weekdaysBetween(startDate, endDate)', () => {
+    it('should return 5 when date range is 2017-02-06(Mon)~2017-02-10(Fri)', () => {
+      let weekdays = weekdayService.weekdaysBetween('2017-02-06', '2017-02-10')
+      expect(weekdays).to.equal(5)
+    })
   })
 })
