@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c66804b7-9ed2-42a4-9886-8ba212069ac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/report.js" afterPath="$PROJECT_DIR$/src/report.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,8 +60,8 @@
         <option value="$PROJECT_DIR$/settings.json" />
         <option value="$PROJECT_DIR$/test/unit/report.spec.js" />
         <option value="$PROJECT_DIR$/src/services/weekday-service.js" />
-        <option value="$PROJECT_DIR$/src/report.js" />
         <option value="$PROJECT_DIR$/src/template.js" />
+        <option value="$PROJECT_DIR$/src/report.js" />
       </list>
     </option>
   </component>
@@ -681,12 +681,12 @@
       <option name="presentableId" value="Default" />
       <updated>1487596781876</updated>
       <workItem from="1487596783177" duration="1473000" />
-      <workItem from="1487598358894" duration="6427000" />
+      <workItem from="1487598358894" duration="6621000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7900000" />
+    <option name="totallyTimeSpent" value="8094000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="896" extended-state="6" />
@@ -914,14 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/report.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="496">
@@ -941,6 +933,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
           <caret line="14" column="48" lean-forward="false" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/report.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="71" column="4" lean-forward="false" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
           <folding />
         </state>
       </provider>
