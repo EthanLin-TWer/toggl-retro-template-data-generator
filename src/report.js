@@ -68,11 +68,15 @@ export class Report {
   }
   
   isWeekdayClients(client) {
+    if (!client) return false
+    
     let weekdayClients = Settings.weekdayClients
     return weekdayClients.some(registered => client.startsWith(registered))
   }
   
   isWeekdayProjects(project) {
+    if (!project) return false
+    
     let weekdayProjects = Settings.weekdayProjects
     return weekdayProjects.some(registered => project.startsWith(registered))
   }
