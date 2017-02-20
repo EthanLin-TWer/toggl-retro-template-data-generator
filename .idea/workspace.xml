@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c66804b7-9ed2-42a4-9886-8ba212069ac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/report.js" afterPath="$PROJECT_DIR$/src/report.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/weekday-service.js" afterPath="$PROJECT_DIR$/src/services/weekday-service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/template.js" afterPath="$PROJECT_DIR$/src/template.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/unit/report.spec.js" afterPath="$PROJECT_DIR$/test/unit/report.spec.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="template.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/template.js">
+      <file leaf-file-name="settings.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/settings.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1974">
-              <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+            <state relative-caret-position="496">
+              <caret line="17" column="9" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -73,11 +70,11 @@
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/test/unit/services/weekday-service.spec.js" />
         <option value="$PROJECT_DIR$/retro.js" />
-        <option value="$PROJECT_DIR$/settings.json" />
-        <option value="$PROJECT_DIR$/src/services/weekday-service.js" />
-        <option value="$PROJECT_DIR$/src/report.js" />
         <option value="$PROJECT_DIR$/test/unit/report.spec.js" />
         <option value="$PROJECT_DIR$/src/template.js" />
+        <option value="$PROJECT_DIR$/src/services/weekday-service.js" />
+        <option value="$PROJECT_DIR$/settings.json" />
+        <option value="$PROJECT_DIR$/src/report.js" />
       </list>
     </option>
   </component>
@@ -697,15 +694,16 @@
       <option name="presentableId" value="Default" />
       <updated>1487596781876</updated>
       <workItem from="1487596783177" duration="1473000" />
-      <workItem from="1487598358894" duration="3319000" />
+      <workItem from="1487598358894" duration="4362000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4792000" />
+    <option name="totallyTimeSpent" value="5835000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="896" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -716,7 +714,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.74930555" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.7548611" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7548611" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Memory View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -796,69 +794,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/retro.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <marker date="1487599161000" expanded="true" signature="7:190" ph="..." />
-            <marker date="1487599161000" expanded="true" signature="566:679" ph="{&quot;user_agent&quot;: &quot;nodejs_client&quot;...}" />
-            <marker date="1487599161000" expanded="true" signature="701:1022" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-          <folding>
-            <marker date="1487601051000" expanded="true" signature="0:291" ph="{&quot;token&quot;: &quot;4835233c21e9502e5097e85751c5a7b1&quot;...}" />
-            <marker date="1487601051000" expanded="true" signature="141:289" ph="{...}" />
-            <marker date="1487601051000" expanded="true" signature="159:225" ph="[...]" />
-            <marker date="1487601051000" expanded="true" signature="241:267" ph="[...]" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/weekday-service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="790">
-          <caret line="23" column="2" lean-forward="false" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
-          <folding>
-            <marker date="1487601461000" expanded="true" signature="7:94" ph="..." />
-            <marker date="1487601461000" expanded="true" signature="124:427" ph="{...}" />
-            <marker date="1487601461000" expanded="true" signature="142:147" ph="{...}" />
-            <marker date="1487601461000" expanded="true" signature="179:245" ph="{...}" />
-            <marker date="1487601461000" expanded="true" signature="262:305" ph="{...}" />
-            <marker date="1487601461000" expanded="true" signature="320:361" ph="{...}" />
-            <marker date="1487601461000" expanded="true" signature="381:422" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/report.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="49" column="89" lean-forward="true" selection-start-line="49" selection-start-column="89" selection-end-line="49" selection-end-column="89" />
-          <folding>
-            <marker date="1487601568000" expanded="true" signature="20:2258" ph="{...}" />
-            <marker date="1487601568000" expanded="true" signature="66:147" ph="{...}" />
-            <marker date="1487601568000" expanded="true" signature="190:825" ph="{...}" />
-            <marker date="1487601568000" expanded="true" signature="225:820" ph="{...}" />
-            <marker date="1487601568000" expanded="true" signature="240:814" ph="{&quot;client&quot;: client.title.client...}" />
-            <marker date="1487601568000" expanded="true" signature="397:805" ph="{...}" />
-            <marker date="1487601568000" expanded="true" signature="502:795" ph="{&quot;project&quot;: project.title.project...}" />
-            <marker date="1487601568000" expanded="true" signature="868:1345" ph="{...}" />
-            <marker date="1487601568000" expanded="true" signature="903:1338" ph="{...}" />
-            <marker date="1487601568000" expanded="true" signature="1080:1332" ph="{&quot;client&quot;: report.title.client...}" />
-            <marker date="1487601568000" expanded="true" signature="1392:2191" ph="{...}" />
-            <marker date="1487601568000" expanded="true" signature="1782:2187" ph="{&quot;weekdays&quot;: weekdays...}" />
-            <marker date="1487601568000" expanded="true" signature="2214:2256" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/unit/report.spec.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="412">
@@ -918,8 +853,95 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/template.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1974">
+        <state relative-caret-position="630">
           <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+          <folding>
+            <marker date="1487601646000" expanded="true" signature="22:2780" ph="{...}" />
+            <marker date="1487601646000" expanded="true" signature="52:103" ph="{...}" />
+            <marker date="1487601646000" expanded="true" signature="152:218" ph="{...}" />
+            <marker date="1487601646000" expanded="true" signature="267:1623" ph="{...}" />
+            <marker date="1487601646000" expanded="true" signature="1662:1835" ph="{...}" />
+            <marker date="1487601646000" expanded="true" signature="1876:2247" ph="{...}" />
+            <marker date="1487601646000" expanded="true" signature="1912:2203" ph="{...}" />
+            <marker date="1487601646000" expanded="true" signature="1967:2155" ph="{...}" />
+            <marker date="1487601646000" expanded="true" signature="2312:2778" ph="{...}" />
+            <marker date="1487601646000" expanded="true" signature="2347:2732" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/time-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding>
+            <marker date="1487496168000" expanded="true" signature="25:1142" ph="{...}" />
+            <marker date="1487496168000" expanded="true" signature="44:141" ph="{...}" />
+            <marker date="1487496168000" expanded="true" signature="160:261" ph="{...}" />
+            <marker date="1487496168000" expanded="true" signature="300:457" ph="{...}" />
+            <marker date="1487496168000" expanded="true" signature="485:1037" ph="{...}" />
+            <marker date="1487496168000" expanded="true" signature="1067:1140" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/weekday-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="20" column="2" lean-forward="true" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+          <folding>
+            <marker date="1487602226000" expanded="true" signature="7:94" ph="..." />
+            <marker date="1487602226000" expanded="true" signature="124:870" ph="{...}" />
+            <marker date="1487602226000" expanded="true" signature="142:147" ph="{...}" />
+            <marker date="1487602226000" expanded="true" signature="151:445" ph="/** This is the actual interface that I want to provide. However, it is split ...*/" />
+            <marker date="1487602226000" expanded="true" signature="475:588" ph="{...}" />
+            <marker date="1487602226000" expanded="true" signature="622:688" ph="{...}" />
+            <marker date="1487602226000" expanded="true" signature="705:748" ph="{...}" />
+            <marker date="1487602226000" expanded="true" signature="763:804" ph="{...}" />
+            <marker date="1487602226000" expanded="true" signature="824:865" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/retro.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <marker date="1487599161000" expanded="true" signature="7:190" ph="..." />
+            <marker date="1487599161000" expanded="true" signature="566:679" ph="{&quot;user_agent&quot;: &quot;nodejs_client&quot;...}" />
+            <marker date="1487599161000" expanded="true" signature="701:1022" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/report.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="706">
+          <caret line="61" column="4" lean-forward="false" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="4" />
+          <folding>
+            <marker date="1487602694000" expanded="true" signature="56:2494" ph="{...}" />
+            <marker date="1487602694000" expanded="true" signature="102:183" ph="{...}" />
+            <marker date="1487602694000" expanded="true" signature="226:967" ph="{...}" />
+            <marker date="1487602694000" expanded="true" signature="336:962" ph="{...}" />
+            <marker date="1487602694000" expanded="true" signature="351:956" ph="{&quot;client&quot;: client.title.client...}" />
+            <marker date="1487602694000" expanded="true" signature="508:947" ph="{...}" />
+            <marker date="1487602694000" expanded="true" signature="644:937" ph="{&quot;project&quot;: project.title.project...}" />
+            <marker date="1487602694000" expanded="true" signature="1010:1487" ph="{...}" />
+            <marker date="1487602694000" expanded="true" signature="1045:1480" ph="{...}" />
+            <marker date="1487602694000" expanded="true" signature="1222:1474" ph="{&quot;client&quot;: report.title.client...}" />
+            <marker date="1487602694000" expanded="true" signature="1534:2333" ph="{...}" />
+            <marker date="1487602694000" expanded="true" signature="1924:2329" ph="{&quot;weekdays&quot;: weekdays...}" />
+            <marker date="1487602694000" expanded="true" signature="2366:2427" ph="{...}" />
+            <marker date="1487602694000" expanded="true" signature="2450:2492" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="17" column="9" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
       </provider>
