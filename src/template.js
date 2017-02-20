@@ -30,13 +30,13 @@ https://toggl.com/app/reports/summary/1663862/from/${this.since}/to/${this.until
 
 ### Clients report 
 
-| Client | Total registration | Percentage | Effective days | Hours/Day |
+| Client | Total registration | Percentage | Hours/Day | Effective days |
 | :---: | :---: | :---: | :---: | :---: |
 ${this.generateClientsBriefChart(clients)}
 
 ### Detailed projects report
 
-| Client | Projects | Total registration | Percentage | Effective days | Hours/Day |
+| Client | Projects | Total registration | Percentage | Hours/Day | Effective days |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 ${this.generateProjectsBriefChart(projects)}
 
@@ -70,7 +70,7 @@ ${this.generateClientsAndProjectsDetailedSection(clients, projects)}
 
   generateClientsBriefChart(clients) {
 
-    return clients.map(client => `| ${client.client} | ${client.time} | ${client.percentage} | ${client.effectiveDays} | ${client.hoursPerDay} |`)
+    return clients.map(client => `| ${client.client} | ${client.time} | ${client.percentage} | ${client.hoursPerDay} | ${client.effectiveDays} |`)
       .reduce((cli, ent) => cli + '\n' + ent)
   }
 
@@ -78,7 +78,7 @@ ${this.generateClientsAndProjectsDetailedSection(clients, projects)}
     return projects.map(client => {
       return client.projects.map((project, index) => {
         let firstColumn = !!index ? '' : client.client
-        return `| ${firstColumn} | ${project.project} | ${project.time} | ${project.percentage} | ${project.effectiveDays} | ${project.hoursPerDay} |`
+        return `| ${firstColumn} | ${project.project} | ${project.time} | ${project.percentage} | ${project.hoursPerDay} | ${project.effectiveDays} |`
       }).reduce((pro, ject) => pro + '\n' + ject)
     }).reduce((cli, ent) => cli + '\n' + ent)
   }
