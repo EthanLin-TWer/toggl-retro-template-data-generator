@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c66804b7-9ed2-42a4-9886-8ba212069ac2" name="Default" comment="" />
+    <list default="true" id="c66804b7-9ed2-42a4-9886-8ba212069ac2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,20 +15,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="toggl-retro-template-data-generator" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="settings.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/settings.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -693,12 +681,12 @@
       <option name="presentableId" value="Default" />
       <updated>1487596781876</updated>
       <workItem from="1487596783177" duration="1473000" />
-      <workItem from="1487598358894" duration="6034000" />
+      <workItem from="1487598358894" duration="6427000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7507000" />
+    <option name="totallyTimeSpent" value="7900000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="896" extended-state="6" />
@@ -712,7 +700,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.74930555" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.7548611" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7548611" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Memory View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -934,29 +922,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/template.js">
+    <entry file="file://$PROJECT_DIR$/settings.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        <state relative-caret-position="496">
+          <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
           <folding>
-            <marker date="1487604205000" expanded="true" signature="22:2858" ph="{...}" />
-            <marker date="1487604205000" expanded="true" signature="52:103" ph="{...}" />
-            <marker date="1487604205000" expanded="true" signature="152:218" ph="{...}" />
-            <marker date="1487604205000" expanded="true" signature="267:1648" ph="{...}" />
-            <marker date="1487604205000" expanded="true" signature="1687:1886" ph="{...}" />
-            <marker date="1487604205000" expanded="true" signature="1927:2325" ph="{...}" />
-            <marker date="1487604205000" expanded="true" signature="1963:2281" ph="{...}" />
-            <marker date="1487604205000" expanded="true" signature="2018:2233" ph="{...}" />
-            <marker date="1487604205000" expanded="true" signature="2390:2856" ph="{...}" />
-            <marker date="1487604205000" expanded="true" signature="2425:2810" ph="{...}" />
+            <marker date="1487603379000" expanded="true" signature="0:500" ph="{&quot;token&quot;: &quot;4835233c21e9502e5097e85751c5a7b1&quot;...}" />
+            <marker date="1487603379000" expanded="true" signature="141:289" ph="{...}" />
+            <marker date="1487603379000" expanded="true" signature="159:225" ph="[...]" />
+            <marker date="1487603379000" expanded="true" signature="241:267" ph="[...]" />
+            <marker date="1487603379000" expanded="true" signature="312:457" ph="[...]" />
+            <marker date="1487603379000" expanded="true" signature="479:498" ph="[...]" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings.json">
+    <entry file="file://$PROJECT_DIR$/src/template.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        <state relative-caret-position="328">
+          <caret line="14" column="48" lean-forward="false" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
           <folding />
         </state>
       </provider>
