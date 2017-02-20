@@ -1,7 +1,8 @@
 export class Report {
 
-  constructor(timeService) {
+  constructor(timeService, weekdayService) {
     this.timeService = timeService
+    this.weekdayService = weekdayService
   }
 
   getProjectsData(reports, since, until) {
@@ -41,6 +42,7 @@ export class Report {
     return {
       totalGrand: this.timeService.millisToHoursAndMinsFormat(totalGrand),
       totalDays: this.timeService.daysBetween(since, until),
+      weekdays: this.weekdayService.weekdaysBetween(since, until),
       grandPercentage: `${grandPercentage}%`,
       grandHoursPerDay: this.timeService.millisToHoursAndMinsFormat(totalGrand / totalDays)
     }

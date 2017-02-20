@@ -1,7 +1,7 @@
 import { describe, beforeEach, before, it } from "mocha"
 import { expect } from 'chai'
 import sinon from 'sinon'
-import { Report, TimeService } from '../../src'
+import { Report, TimeService, WeekdayService } from '../../src'
 
 describe('report.js', () => {
   let report
@@ -10,23 +10,27 @@ describe('report.js', () => {
   let response
 
   beforeEach('', () => {
-    report = new Report(new TimeService())
+    report = new Report(new TimeService(), new WeekdayService())
     response = mockReportResponse()
   })
 
   describe('getSummaryData(total_grand, since, until)', () => {
     it('should call time service to calculate summary data', () => {
       let timeService = new TimeService()
+      let weekdayService = new WeekdayService()
       let daysBetween = sinon.spy(timeService, 'daysBetween')
       let millisToHoursAndMins = sinon.spy(timeService, 'millisToHoursAndMinsFormat')
       let toMillis = sinon.spy(timeService, 'toMillis')
-      report = new Report(timeService)
+      let weekdaysBetween = sinon.spy(weekdayService, 'weekdaysBetween')
+      
+      report = new Report(timeService, weekdayService)
 
       let summary = report.getSummaryData(1000 * 60, '2016-01-01', '2016-01-01')
 
       expect(daysBetween.calledWith('2016-01-01', '2016-01-01')).to.be.true
       expect(millisToHoursAndMins.calledWith(1000 * 60)).to.be.true
       expect(toMillis.calledWith(1)).to.be.true
+      expect(weekdaysBetween.calledWith('2016-01-01', '2016-01-01')).to.be.true
 
       expect(summary.totalGrand).to.equal('0h 1min')
       expect(summary.totalDays).to.equal(1)
