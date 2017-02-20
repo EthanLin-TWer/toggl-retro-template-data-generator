@@ -25,5 +25,15 @@ describe('weekday service', () => {
       let weekdays = weekdayService.weekdaysBetween('2017-02-07', '2017-02-09')
       expect(weekdays).to.equal(3)
     })
+    
+    it('should return 5 when date range is 2017-02-04(Sat)~2017-02-12(Sun)', () => {
+      let weekdays = weekdayService.weekdaysBetween('2017-02-04', '2017-02-12')
+      expect(weekdays).to.equal(5)
+    })
+    
+    it('should return 11 when date range is 2017-02-06(Mon)~2017-02-20(Mon)', () => {
+      let weekdays = weekdayService.weekdaysBetween('2017-02-06', '2017-02-20')
+      expect(weekdays).to.equal(11)
+    })
   })
 })
