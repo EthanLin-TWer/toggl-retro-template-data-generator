@@ -33,8 +33,8 @@ https://toggl.com/app/reports/summary/1663862/from/${this.since}/to/${this.until
 
 ### Clients report 
 
-| Client | Total registration | Percentage | Hours/Day |
-| :---: | :---: | :---: | :---: |
+| Client | Total registration | Percentage | Effective days | Hours/Day |
+| :---: | :---: | :---: | :---: | :---: |
 ${this.generateClientsBriefChart(clients)}
 
 ### Detailed projects report
@@ -73,7 +73,7 @@ ${this.generateClientsAndProjectsDetailedSection(clients, projects)}
 
   generateClientsBriefChart(clients) {
 
-    return clients.map(client => `| ${client.client} | ${client.time} | ${client.percentage} | ${client.hoursPerDay} |`)
+    return clients.map(client => `| ${client.client} | ${client.time} | ${client.effectiveDays} | ${client.percentage} | ${client.hoursPerDay} |`)
       .reduce((cli, ent) => cli + '\n' + ent)
   }
 

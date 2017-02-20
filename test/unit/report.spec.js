@@ -141,15 +141,15 @@ describe('report.js', () => {
     it('should get correct client data, integrational unit test', () => {
       expect(client.length).to.equal(3)
       expect(client[0]).to.deep.equal({
-        client: 'work', time: '39h 32min',
+        client: 'work', time: '39h 32min', effectiveDays: 13,
         percentage: '12.68%', hoursPerDay: '3h 2min'
       })
       expect(client[1]).to.deep.equal({
-        client: 'tech-programming', time: '14h 12min',
+        client: 'tech-programming', time: '14h 12min', effectiveDays: 13,
         percentage: '4.56%', hoursPerDay: '1h 5min'
       })
       expect(client[2]).to.deep.equal({
-        client: 'basic-life', time: '135h 9min',
+        client: 'basic-life', time: '135h 9min', effectiveDays: 13,
         percentage: '43.32%', hoursPerDay: '10h 23min'
       })
     })
