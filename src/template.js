@@ -14,12 +14,9 @@ export class Template {
 
 https://toggl.com/app/reports/summary/1663862/from/${this.since}/to/${this.until}/billable/both
 
-| 总记时<br/>Total grand | 总记录日<br/>Total days | 总工作日<br/>Total weekdays | 假日<br/>Holidays & leavs | 记录率<br/>Grand 
-percentage | 每天记录时<br/>Grand 
-hours / day |
+| 总记时<br/>Total grand | 总记录日<br/>Total days | 总工作日<br/>Total weekdays | 假日<br/>Holidays & leaves | 记录率<br/>Grand percentage | 每天记录时<br/>Grand hours / day |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| ${summary.totalGrand} | ${summary.totalDays} | ${summary.actualWeekdays} | ${summary.holidays}<br/>${summary.leaves} | 
-${summary.grandPercentage} | ${summary.grandHoursPerDay} | 
+| ${summary.totalGrand} | ${summary.totalDays} | ${summary.actualWeekdays} | ${summary.holidays}<br/>${summary.leaves} | ${summary.grandPercentage} | ${summary.grandHoursPerDay} | 
 
 ## Actions from last retro
 
