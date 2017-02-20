@@ -16,8 +16,8 @@ https://toggl.com/app/reports/summary/1663862/from/${this.since}/to/${this.until
 
 | 总记时<br/>Total grand | 总记录日<br/>Total days | 总工作日<br/>Total weekdays | 假日<br/>Holidays & leavs | 记录率<br/>Grand 
 percentage | 每天记录时<br/>Grand 
-hours / day|
-| :---: | :---: | :---: | :---: | :---: |
+hours / day |
+| :---: | :---: | :---: | :---: | :---: | :---: |
 | ${summary.totalGrand} | ${summary.totalDays} | ${summary.actualWeekdays} | ${summary.holidays}<br/>${summary.leaves} | 
 ${summary.grandPercentage} | ${summary.grandHoursPerDay} | 
 
@@ -39,8 +39,8 @@ ${this.generateClientsBriefChart(clients)}
 
 ### Detailed projects report
 
-| Client | Projects | Total registration | Percentage | Hours/Day |
-| :---: | :---: | :---: | :---: | :---: |
+| Client | Projects | Total registration | Percentage | Effective days | Hours/Day |
+| :---: | :---: | :---: | :---: | :---: | :---: |
 ${this.generateProjectsBriefChart(projects)}
 
 ${this.generateClientsAndProjectsDetailedSection(clients, projects)}
@@ -73,7 +73,7 @@ ${this.generateClientsAndProjectsDetailedSection(clients, projects)}
 
   generateClientsBriefChart(clients) {
 
-    return clients.map(client => `| ${client.client} | ${client.time} | ${client.effectiveDays} | ${client.percentage} | ${client.hoursPerDay} |`)
+    return clients.map(client => `| ${client.client} | ${client.time} | ${client.percentage} | ${client.effectiveDays} | ${client.hoursPerDay} |`)
       .reduce((cli, ent) => cli + '\n' + ent)
   }
 
@@ -81,7 +81,7 @@ ${this.generateClientsAndProjectsDetailedSection(clients, projects)}
     return projects.map(client => {
       return client.projects.map((project, index) => {
         let firstColumn = !!index ? '' : client.client
-        return `| ${firstColumn} | ${project.project} | ${project.time} | ${project.effectiveDays} | ${project.percentage} | ${project.hoursPerDay} |`
+        return `| ${firstColumn} | ${project.project} | ${project.time} | ${project.percentage} | ${project.effectiveDays} | ${project.hoursPerDay} |`
       }).reduce((pro, ject) => pro + '\n' + ject)
     }).reduce((cli, ent) => cli + '\n' + ent)
   }
