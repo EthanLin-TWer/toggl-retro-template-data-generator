@@ -16,7 +16,7 @@ export class WeekdayService {
    */
   actualWeekdays(start, end) {
     return this.weekdaysBetween(start, end) - (
-      this.holidays() + this.leaves() + this.otherAbsent())
+      this.holidays().length + this.leaves().length + this.otherAbsent().length)
   }
   
   weekdaysBetween(start, end) {

@@ -13,13 +13,15 @@ export class Report {
         client: client.title.client,
         time: this.timeService.millisToHoursAndMinsFormat(client.time),
         projects: client.items.map(project => {
-          let actualWeekdays = this.isWeekdayProjects(project) ? 
+          let effectiveDays = this.isWeekdayProjects(project.title.project) ? 
             this.weekdayService.actualWeekdays(since, until) : 
             this.timeService.daysBetween(since, until)
-          let millisPerDay = project.time / actualWeekdays
+          let millisPerDay = project.time / effectiveDays
+          
           return {
             project: project.title.project,
             time: this.timeService.millisToHoursAndMinsFormat(project.time),
+            effectiveDays,
             hoursPerDay: this.timeService.millisToHoursAndMinsFormat(millisPerDay), 
             percentage: `${this.percentage(project.time / client.time)}%`
           }
@@ -31,7 +33,7 @@ export class Report {
   getClientData(reports, since, until) {
     
     return reports.map(client => {
-      let effectiveDays = this.isWeekdayClients(client) ? 
+      let effectiveDays = this.isWeekdayClients(client.title.client) ? 
         this.weekdayService.actualWeekdays(since, until) 
         : this.timeService.daysBetween(since, until)
       
@@ -54,6 +56,7 @@ export class Report {
     let holidays = this.weekdayService.holidays()
     let leaves = this.weekdayService.leaves()
     let otherAbsent = this.weekdayService.otherAbsent()
+    
     return {
       totalGrand: this.timeService.millisToHoursAndMinsFormat(totalGrand),
       totalDays: this.timeService.daysBetween(since, until),

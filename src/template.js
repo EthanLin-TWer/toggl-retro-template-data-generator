@@ -81,7 +81,7 @@ ${this.generateClientsAndProjectsDetailedSection(clients, projects)}
     return projects.map(client => {
       return client.projects.map((project, index) => {
         let firstColumn = !!index ? '' : client.client
-        return `| ${firstColumn} | ${project.project} | ${project.time} | ${project.percentage} | ${project.hoursPerDay} |`
+        return `| ${firstColumn} | ${project.project} | ${project.time} | ${project.effectiveDays} | ${project.percentage} | ${project.hoursPerDay} |`
       }).reduce((pro, ject) => pro + '\n' + ject)
     }).reduce((cli, ent) => cli + '\n' + ent)
   }
