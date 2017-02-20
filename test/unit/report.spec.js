@@ -22,6 +22,8 @@ describe('report.js', () => {
       let millisToHoursAndMins = sinon.spy(timeService, 'millisToHoursAndMinsFormat')
       let toMillis = sinon.spy(timeService, 'toMillis')
       let weekdaysBetween = sinon.spy(weekdayService, 'weekdaysBetween')
+      let holidays = sinon.spy(weekdayService, 'holidays')
+      let leaves = sinon.spy(weekdayService, 'leaves')
       
       report = new Report(timeService, weekdayService)
 
@@ -31,11 +33,12 @@ describe('report.js', () => {
       expect(millisToHoursAndMins.calledWith(1000 * 60)).to.be.true
       expect(toMillis.calledWith(1)).to.be.true
       expect(weekdaysBetween.calledWith('2016-01-01', '2016-01-01')).to.be.true
+      expect(holidays.calledOnce).to.be.true
+      expect(leaves.calledOnce).to.be.true
 
       expect(summary.totalGrand).to.equal('0h 1min')
       expect(summary.totalDays).to.equal(1)
       expect(summary.grandPercentage).to.equal('0.07%')
-      expect(summary.weekdays).to.equal(1)
     })
 
     it('should get correct summary data, integration-unit test', () => {

@@ -38,11 +38,16 @@ export class Report {
   
   getSummaryData(totalGrand, since, until) {
     let totalDays = this.timeService.daysBetween(since, until)
-    let grandPercentage = this.percentage(totalGrand / this.timeService.toMillis(totalDays));
+    let grandPercentage = this.percentage(totalGrand / this.timeService.toMillis(totalDays))
+    let weekdays = this.weekdayService.weekdaysBetween(since, until)
+    let holidays = this.weekdayService.holidays()
+    let leaves = this.weekdayService.leaves()
+    let otherAbsent = this.weekdayService.otherAbsent()
     return {
       totalGrand: this.timeService.millisToHoursAndMinsFormat(totalGrand),
       totalDays: this.timeService.daysBetween(since, until),
-      weekdays: this.weekdayService.weekdaysBetween(since, until),
+      weekdays, holidays, leaves,
+      actualWeekdays: weekdays - (holidays.length + leaves.length + otherAbsent.length), 
       grandPercentage: `${grandPercentage}%`,
       grandHoursPerDay: this.timeService.millisToHoursAndMinsFormat(totalGrand / totalDays)
     }
