@@ -35,6 +35,7 @@ describe('report.js', () => {
       expect(summary.totalGrand).to.equal('0h 1min')
       expect(summary.totalDays).to.equal(1)
       expect(summary.grandPercentage).to.equal('0.07%')
+      expect(summary.weekdays).to.equal(1)
     })
 
     it('should get correct summary data, integration-unit test', () => {
