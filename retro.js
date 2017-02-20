@@ -1,6 +1,7 @@
 import TogglClient from 'toggl-api'
 import Argv from 'minimist'
-import { Report, Template, TimeService } from './src'
+import { Report, Template } from './src'
+import { TimeService, WeekdayService } from './src'
 import Settings from './settings'
 
 const argv = Argv(process.argv.slice(2))
@@ -10,7 +11,7 @@ const since = argv.since || Settings.since
 const until = argv.until || Settings.until 
 
 let toggl = new TogglClient({ apiToken })
-let report = new Report(new TimeService())
+let report = new Report(new TimeService(), new WeekdayService())
 let template = new Template(since, until)
 
 toggl.summaryReport({
