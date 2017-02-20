@@ -69,12 +69,12 @@ export class Report {
   
   isWeekdayClients(client) {
     let weekdayClients = Settings.weekdayClients
-    return weekdayClients.some(registered => registered.startsWith(client))
+    return weekdayClients.some(registered => client.startsWith(registered))
   }
   
   isWeekdayProjects(project) {
     let weekdayProjects = Settings.weekdayProjects
-    return weekdayProjects.some(registered => registered.startsWith(project))
+    return weekdayProjects.some(registered => project.startsWith(registered))
   }
 
   percentage(number) {
