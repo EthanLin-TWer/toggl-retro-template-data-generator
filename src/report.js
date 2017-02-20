@@ -1,3 +1,5 @@
+import Settings from '../settings'
+
 export class Report {
 
   constructor(timeService, weekdayService) {
@@ -11,7 +13,10 @@ export class Report {
         client: client.title.client,
         time: this.timeService.millisToHoursAndMinsFormat(client.time),
         projects: client.items.map(project => {
-          let millisPerDay = project.time / this.timeService.daysBetween(since,until)
+          let actualWeekdays = this.isWeekdayProjects(project) ? 
+            this.weekdayService.actualWeekdays(since, until) : 
+            this.timeService.daysBetween(since, until)
+          let millisPerDay = project.time / actualWeekdays
           return {
             project: project.title.project,
             time: this.timeService.millisToHoursAndMinsFormat(project.time),
@@ -51,6 +56,11 @@ export class Report {
       grandPercentage: `${grandPercentage}%`,
       grandHoursPerDay: this.timeService.millisToHoursAndMinsFormat(totalGrand / totalDays)
     }
+  }
+  
+  isWeekdayProjects(project) {
+    let weekdayProjects = Settings.weekdayProjects
+    return weekdayProjects.some(registered => registered.startsWith(project))
   }
 
   percentage(number) {

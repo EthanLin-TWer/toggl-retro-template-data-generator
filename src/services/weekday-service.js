@@ -6,6 +6,19 @@ export class WeekdayService {
   constructor() {
   }
 
+  /**
+   * This is the actual interface that I want to provide. However, it is split
+   * into separate calls to weekdaysBetween(), holidays(), leaves() and
+   * otherAbsents() and combine the results. It's for testing purpose only and
+   * it's not ideal.
+   * @param start
+   * @param end
+   */
+  actualWeekdays(start, end) {
+    return this.weekdaysBetween(start, end) - (
+      this.holidays() + this.leaves() + this.otherAbsent())
+  }
+  
   weekdaysBetween(start, end) {
     return moment().weekdayCalc(start, end, [1, 2, 3, 4, 5])
   }

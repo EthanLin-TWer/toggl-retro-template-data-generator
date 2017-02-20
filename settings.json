@@ -13,5 +13,14 @@
       "2017-02-01"
     ],
     "others": []
-  }
+  },
+  "weekdayProjects": [
+    "DART-GFI",
+    "BlackOps",
+    "Workshops&Sessions",
+    "Other-Meetings&Events",
+    "Regular-Meetings",
+    "重构项目代码",
+    "Foosball"
+  ]
 }
