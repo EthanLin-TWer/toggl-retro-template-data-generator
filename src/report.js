@@ -13,9 +13,10 @@ export class Report {
         client: client.title.client,
         time: this.timeService.millisToHoursAndMinsFormat(client.time),
         projects: client.items.map(project => {
-          let effectiveDays = this.isWeekdayProjects(project.title.project) ? 
+          let effectiveDays = this.isWeekdayProject(project.title.project) ? 
             this.weekdayService.actualWeekdays(since, until) : 
-            this.timeService.daysBetween(since, until)
+            this.timeService.daysBetween(since, until) 
+            - this.weekdayService.otherAbsent().length
           let millisPerDay = project.time / effectiveDays
           
           return {
@@ -33,9 +34,10 @@ export class Report {
   getClientData(reports, since, until) {
     
     return reports.map(client => {
-      let effectiveDays = this.isWeekdayClients(client.title.client) ? 
+      let effectiveDays = this.isWeekdayClient(client.title.client) ? 
         this.weekdayService.actualWeekdays(since, until) 
         : this.timeService.daysBetween(since, until)
+          - this.weekdayService.otherAbsent().length
       
       let percentage = client.time / this.timeService.totalMillis(since, until)
       let millisPerDay = client.time / effectiveDays
@@ -59,7 +61,7 @@ export class Report {
     
     return {
       totalGrand: this.timeService.millisToHoursAndMinsFormat(totalGrand),
-      totalDays: this.timeService.daysBetween(since, until),
+      totalDays: totalDays - otherAbsent.length,
       weekdays, holidays, leaves,
       actualWeekdays: weekdays - (holidays.length + leaves.length + otherAbsent.length), 
       grandPercentage: `${grandPercentage}%`,
@@ -67,14 +69,14 @@ export class Report {
     }
   }
   
-  isWeekdayClients(client) {
+  isWeekdayClient(client) {
     if (!client) return false
     
     let weekdayClients = Settings.weekdayClients
     return weekdayClients.some(registered => client.startsWith(registered))
   }
   
-  isWeekdayProjects(project) {
+  isWeekdayProject(project) {
     if (!project) return false
     
     let weekdayProjects = Settings.weekdayProjects
