@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c66804b7-9ed2-42a4-9886-8ba212069ac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/report.js" afterPath="$PROJECT_DIR$/src/report.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="report.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/report.js">
+      <file leaf-file-name="settings.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/settings.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1947">
-              <caret line="63" column="26" lean-forward="false" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
+            <state relative-caret-position="378">
+              <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -36,6 +36,8 @@
       <find>clie</find>
       <find>client</find>
       <find>totalDays</find>
+      <find>weekday</find>
+      <find>holiday</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -72,11 +74,11 @@
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/test/unit/services/weekday-service.spec.js" />
         <option value="$PROJECT_DIR$/retro.js" />
-        <option value="$PROJECT_DIR$/test/unit/report.spec.js" />
-        <option value="$PROJECT_DIR$/src/services/weekday-service.js" />
         <option value="$PROJECT_DIR$/src/template.js" />
-        <option value="$PROJECT_DIR$/settings.json" />
         <option value="$PROJECT_DIR$/src/report.js" />
+        <option value="$PROJECT_DIR$/src/services/weekday-service.js" />
+        <option value="$PROJECT_DIR$/test/unit/report.spec.js" />
+        <option value="$PROJECT_DIR$/settings.json" />
       </list>
     </option>
   </component>
@@ -702,15 +704,16 @@
       <workItem from="1487596783177" duration="1473000" />
       <workItem from="1487598358894" duration="7887000" />
       <workItem from="1487647803008" duration="23000" />
-      <workItem from="1487647840871" duration="946000" />
+      <workItem from="1487647840871" duration="2070000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10329000" />
+    <option name="totallyTimeSpent" value="11453000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="896" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -720,16 +723,16 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.74930555" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.74930555" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.75" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.49542335" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Memory View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5045767" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Key Promoter" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -786,13 +789,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/time-service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/retro.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -814,50 +810,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/report.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3830">
-          <caret line="143" column="46" lean-forward="true" selection-start-line="143" selection-start-column="46" selection-end-line="143" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/template.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="73" column="45" lean-forward="true" selection-start-line="73" selection-start-column="45" selection-end-line="73" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="1" column="44" lean-forward="false" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
-          <folding />
+        <state relative-caret-position="309">
+          <caret line="16" column="68" lean-forward="false" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="68" />
+          <folding>
+            <marker date="1487606767000" expanded="true" signature="22:2890" ph="{...}" />
+            <marker date="1487606767000" expanded="true" signature="52:103" ph="{...}" />
+            <marker date="1487606767000" expanded="true" signature="152:218" ph="{...}" />
+            <marker date="1487606767000" expanded="true" signature="267:1680" ph="{...}" />
+            <marker date="1487606767000" expanded="true" signature="1719:1918" ph="{...}" />
+            <marker date="1487606767000" expanded="true" signature="1959:2357" ph="{...}" />
+            <marker date="1487606767000" expanded="true" signature="1995:2313" ph="{...}" />
+            <marker date="1487606767000" expanded="true" signature="2050:2265" ph="{...}" />
+            <marker date="1487606767000" expanded="true" signature="2422:2888" ph="{...}" />
+            <marker date="1487606767000" expanded="true" signature="2457:2842" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/services/weekday-service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+        <state relative-caret-position="126">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
-            <marker date="1487604085000" expanded="false" signature="7:94" ph="..." />
-            <marker date="1487604085000" expanded="true" signature="124:891" ph="{...}" />
-            <marker date="1487604085000" expanded="true" signature="142:147" ph="{...}" />
-            <marker date="1487604085000" expanded="false" signature="151:445" ph="/** This is the actual interface that I want to provide. However, it is split ...*/" />
-            <marker date="1487604085000" expanded="true" signature="475:609" ph="{...}" />
-            <marker date="1487604085000" expanded="true" signature="643:709" ph="{...}" />
-            <marker date="1487604085000" expanded="true" signature="726:769" ph="{...}" />
-            <marker date="1487604085000" expanded="true" signature="784:825" ph="{...}" />
-            <marker date="1487604085000" expanded="true" signature="845:886" ph="{...}" />
+            <marker date="1487653248000" expanded="true" signature="7:94" ph="..." />
+            <marker date="1487653248000" expanded="true" signature="124:863" ph="{...}" />
+            <marker date="1487653248000" expanded="true" signature="142:147" ph="{...}" />
+            <marker date="1487653248000" expanded="true" signature="151:445" ph="/** This is the actual interface that I want to provide. However, it is split ...*/" />
+            <marker date="1487653248000" expanded="true" signature="475:581" ph="{...}" />
+            <marker date="1487653248000" expanded="true" signature="615:681" ph="{...}" />
+            <marker date="1487653248000" expanded="true" signature="698:741" ph="{...}" />
+            <marker date="1487653248000" expanded="true" signature="756:797" ph="{...}" />
+            <marker date="1487653248000" expanded="true" signature="817:858" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/time-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+          <folding>
+            <marker date="1487496168000" expanded="true" signature="25:1142" ph="{...}" />
+            <marker date="1487496168000" expanded="true" signature="44:141" ph="{...}" />
+            <marker date="1487496168000" expanded="true" signature="160:261" ph="{...}" />
+            <marker date="1487496168000" expanded="true" signature="300:457" ph="{...}" />
+            <marker date="1487496168000" expanded="true" signature="485:1037" ph="{...}" />
+            <marker date="1487496168000" expanded="true" signature="1067:1140" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/report.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1947">
-          <caret line="63" column="26" lean-forward="false" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
+        <state relative-caret-position="496">
+          <caret line="63" column="2" lean-forward="false" selection-start-line="63" selection-start-column="2" selection-end-line="63" selection-end-column="2" />
+          <folding>
+            <marker date="1487653350000" expanded="true" signature="56:3058" ph="{...}" />
+            <marker date="1487653350000" expanded="true" signature="102:183" ph="{...}" />
+            <marker date="1487653350000" expanded="true" signature="226:1124" ph="{...}" />
+            <marker date="1487653350000" expanded="true" signature="261:1119" ph="{...}" />
+            <marker date="1487653350000" expanded="true" signature="276:1113" ph="{&quot;client&quot;: client.title.client...}" />
+            <marker date="1487653350000" expanded="true" signature="433:1104" ph="{...}" />
+            <marker date="1487653350000" expanded="true" signature="774:1094" ph="{&quot;project&quot;: project.title.project...}" />
+            <marker date="1487653350000" expanded="true" signature="1167:1885" ph="{...}" />
+            <marker date="1487653350000" expanded="true" signature="1207:1878" ph="{...}" />
+            <marker date="1487653350000" expanded="true" signature="1597:1872" ph="{&quot;client&quot;: client.title.client...}" />
+            <marker date="1487653350000" expanded="true" signature="1932:2594" ph="{...}" />
+            <marker date="1487653350000" expanded="true" signature="2202:2590" ph="{&quot;holidays&quot;: holidays...}" />
+            <marker date="1487653350000" expanded="true" signature="2624:2789" ph="{...}" />
+            <marker date="1487653350000" expanded="true" signature="2821:2991" ph="{...}" />
+            <marker date="1487653350000" expanded="true" signature="3014:3056" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/report.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="56" column="37" lean-forward="false" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
           <folding />
         </state>
       </provider>
