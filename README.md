@@ -1,5 +1,7 @@
 # Toggl Retrospection Template Data Generator [![][Badges: Travis CI]][Links: Travis CI]
 
+> **Important**: This repo is currently under maintenance and the `settings.json` still works like a mess. Contact me or contribute to issues [#19](https://github.com/linesh-simplicity/toggl-retro-template-data-generator/issues/19) and/or [#20](https://github.com/linesh-simplicity/toggl-retro-template-data-generator/issues/20) if you really want to use this generator in this moment. 
+ 
 ## Development
 
 Run the following command in the project root to enable live development. Make sure you have run `npm install` before you run any commands.
