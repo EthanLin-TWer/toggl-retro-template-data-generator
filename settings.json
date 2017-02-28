@@ -1,19 +1,12 @@
 {
   "token": "",
   "workspaceId": "1663862",
-  "since": "2017-01-27",
-  "until": "2017-02-19",
+  "since": "2017-02-27",
+  "until": "2017-02-28",
   "excludes": {
-    "holidays": [
-      "2017-01-27",
-      "2017-01-30",
-      "2017-01-31"
-    ],
-    "leaves": [
-      "2017-02-01"
-    ],
-    "others": [
-    ]
+    "holidays": [],
+    "leaves": [],
+    "others": []
   },
   "weekdayProjects": [
     "DART-GFI",
@@ -28,5 +21,6 @@
   ],
   "weekdayClients": [
     "A1-Work"
-  ]
+  ],
+  "lastRetro": "https://github.com/linesh-simplicity/linesh-simplicity.github.io/issues/116"
 }
