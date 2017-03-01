@@ -12,6 +12,7 @@
     "babel-preset-stage-0": "^6.22.0",
     "babel-register": "^6.22.0",
     "chai": "^3.5.0",
+    "github-api": "^3.0.0",
     "minimist": "^1.2.0",
     "mocha": "^3.2.0",
     "mocha-better-spec-reporter": "^3.1.0",
