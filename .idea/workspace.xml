@@ -17,20 +17,6 @@
   <component name="FavoritesManager">
     <favorites_list name="toggl-retro-template-data-generator" />
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="template.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/template.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="108" column="118" lean-forward="false" selection-start-line="108" selection-start-column="118" selection-end-line="108" selection-end-column="118" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>summary</find>
@@ -80,8 +66,8 @@
         <option value="$PROJECT_DIR$/settings.json" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.babelrc" />
-        <option value="$PROJECT_DIR$/retro.js" />
         <option value="$PROJECT_DIR$/src/template.js" />
+        <option value="$PROJECT_DIR$/retro.js" />
       </list>
     </option>
   </component>
@@ -723,16 +709,15 @@
       <workItem from="1487777051806" duration="412000" />
       <workItem from="1487865008465" duration="352000" />
       <workItem from="1487914344867" duration="356000" />
-      <workItem from="1488379806556" duration="2728000" />
+      <workItem from="1488379806556" duration="2780000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15335000" />
+    <option name="totallyTimeSpent" value="15387000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="896" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -880,23 +865,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/retro.js">
+    <entry file="file://$PROJECT_DIR$/src/template.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1756">
-          <caret line="30" column="2" lean-forward="true" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
+        <state relative-caret-position="346">
+          <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
           <folding>
-            <marker date="1488382295000" expanded="true" signature="7:190" ph="..." />
-            <marker date="1488382295000" expanded="true" signature="566:679" ph="{&quot;user_agent&quot;: &quot;nodejs_client&quot;...}" />
-            <marker date="1488382295000" expanded="true" signature="701:1067" ph="{...}" />
+            <marker date="1488383013000" expanded="true" signature="55:3769" ph="{...}" />
+            <marker date="1488383013000" expanded="true" signature="85:405" ph="{...}" />
+            <marker date="1488383013000" expanded="true" signature="137:288" ph="//..." />
+            <marker date="1488383013000" expanded="true" signature="454:520" ph="{...}" />
+            <marker date="1488383013000" expanded="true" signature="569:1982" ph="{...}" />
+            <marker date="1488383013000" expanded="true" signature="2021:2220" ph="{...}" />
+            <marker date="1488383013000" expanded="true" signature="2261:2659" ph="{...}" />
+            <marker date="1488383013000" expanded="true" signature="2297:2615" ph="{...}" />
+            <marker date="1488383013000" expanded="true" signature="2352:2567" ph="{...}" />
+            <marker date="1488383013000" expanded="true" signature="2724:3190" ph="{...}" />
+            <marker date="1488383013000" expanded="true" signature="2759:3144" ph="{...}" />
+            <marker date="1488383013000" expanded="true" signature="3219:3767" ph="{...}" />
+            <marker date="1488383013000" expanded="true" signature="3356:3573" ph="{...}" />
+            <marker date="1488383013000" expanded="true" signature="3393:3567" ph="{...}" />
+            <marker date="1488383013000" expanded="true" signature="3617:3667" ph="{...}" />
+            <marker date="1488383013000" expanded="true" signature="3711:3762" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/template.js">
+    <entry file="file://$PROJECT_DIR$/retro.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="108" column="118" lean-forward="false" selection-start-line="108" selection-start-column="118" selection-end-line="108" selection-end-column="118" />
-          <folding />
+        <state relative-caret-position="664">
+          <caret line="27" column="48" lean-forward="true" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
