@@ -3,8 +3,7 @@ import 'moment-weekday-calc'
 import Settings from '../../settings'
 
 export class WeekdayService {
-  constructor() {
-  }
+  constructor() { }
 
   /**
    * This is the actual interface that I want to provide. However, it is split
